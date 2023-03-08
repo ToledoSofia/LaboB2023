@@ -14,3 +14,16 @@ public class DiaLaboral {
         }
     }
 }
+/*
+switch:
+case "lunes":
+case "martes"....
+    sout
+    break;
+case "sabado":
+case "domingo":
+ sout
+ break;
+default:
+    sout no es un dia;
+ break;*/
