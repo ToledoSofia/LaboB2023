@@ -8,7 +8,7 @@ public class Rectangulo {
         this.base = 0;
         this.altura = 0;
     }
-    public Rectangulo(double h, double b){
+    public Rectangulo(double b, double h){
         this.base = b;
         this.altura = h;
     }
@@ -25,23 +25,10 @@ public class Rectangulo {
         this.altura = altura;
     }
 
-    public double calculoArea(double base, double altura){
+    public double calculoArea(){
         return base * altura;
     }
-    public double calculoPerimetro (double base, double altura){
+    public double calculoPerimetro (){
         return base*2 + altura*2;
     }
-
-    public static void main(String[] args) {
-        System.out.println("ingrese la base del rectangulo");
-        Scanner numero = new Scanner(System.in);
-        Rectangulo r1 = new Rectangulo();
-        double base = numero.nextDouble();
-        System.out.println("Ingrese la altura del rectangulo");
-        double altura = numero.nextDouble();
-        System.out.println("area del rectangulo: " + );
-
-
-    }
-
 }

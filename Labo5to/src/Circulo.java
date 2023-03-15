@@ -1,40 +1,36 @@
 import java.util.Scanner;
 
 public class Circulo {
-    private int radio;
+    private double radio;
     public Circulo(){
         this.radio = 2;
     }
-    public Circulo (int radio){
+    public Circulo (double radio){
         this.radio = radio;
     }
-    public int getRadio(){
+    public double getRadio(){
         return radio;
     }
-    public void setRadio(int radio){
+    public void setRadio(double radio){
         this.radio = radio;
     }
 
-    public double calculoArea(int radio){
-        double area = Math.PI * radio*radio;
-        return area;
+    public double calculoArea(){
+        return Math.PI * radio*radio;
     }
-    public double calculoPerimetro(int radio){
-        double perimetro = 2 * Math.PI * radio;
-        return perimetro;
+    public double calculoPerimetro(){
+        return 2 * Math.PI * radio;
     }
     public static void main(String[] args) {
         System.out.println("ingrese el radio del numero");
         Scanner numero = new Scanner(System.in);
-        int radio = numero.nextInt();
+        double radio = numero.nextInt();
 
         Circulo c1 = new Circulo(radio);
-        double area = c1.calculoArea(c1.getRadio());
+        double area = c1.calculoArea();
         System.out.println("area del circulo: " + area);
 
-        double perimetro = c1.calculoPerimetro(c1.getRadio());
+        double perimetro = c1.calculoPerimetro();
         System.out.println("perimetro del circulo: " + perimetro);
     }
 }
-
-
