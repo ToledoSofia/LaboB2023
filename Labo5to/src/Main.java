@@ -24,5 +24,31 @@ public class Main {
         persona1.mostrarDatos();
         persona2.mostrarDatos();
 
+        Fecha fecha1 = new Fecha(1,1,2000);
+        fecha1.larga();
+        fecha1.anterior();
+        fecha1.larga();
+        fecha1.siguiente();
+        fecha1.corta();
+        int dias = fecha1.diaMes(2);
+        System.out.println(dias);
+        Fecha fecha2 = new Fecha(1, 1, 1999);
+        fecha1.menorQue(fecha2);
+        fecha1.mayorQue(fecha2);
+
+        Libro libro1 =  new Libro("titulo",persona1, "123abc",1400,"Nova", fecha1);
+        Libro libro2 = new Libro("titulo2", persona1, fecha2);
+        libro1.mostrarInformacion();
+        libro1.libroAnterior(libro2);
+
+        Cafetera cafetera1 = new Cafetera();
+        cafetera1.llenarCafetera();
+        System.out.println("llena: " + cafetera1.getCantActual());
+        cafetera1.vaciarCafetera();
+        System.out.println("vacia: " + cafetera1.getCantActual());
+        cafetera1.agregarCafe(124);
+        System.out.println("124:" + cafetera1.getCantActual());
+        cafetera1.servirTaza(20);
+        System.out.println("taza20: " + cafetera1.getCantActual());
     }
 }

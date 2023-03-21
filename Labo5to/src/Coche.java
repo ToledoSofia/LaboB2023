@@ -46,8 +46,9 @@ public class Coche {
         velocidad += mas;
     }
     public void frenar(int menos){
-        if(velocidad>=1){
-            velocidad -= menos;
+        velocidad -= menos;
+        if(velocidad<0){
+            velocidad = 0;
         }
     }
     public void mostrarVelocidadActual(){

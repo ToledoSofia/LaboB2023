@@ -5,8 +5,8 @@ public class Rectangulo {
     private double altura;
 
     public Rectangulo(){
-        this.base = 0;
-        this.altura = 0;
+        this.base = 1;
+        this.altura = 1;
     }
     public Rectangulo(double b, double h){
         this.base = b;
