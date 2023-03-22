@@ -11,13 +11,13 @@ public class Main {
         double area = r1.calculoArea();
         double perimetro = r1.calculoPerimetro();
         System.out.println("area del rectangulo: " + area);
-        System.out.println("Perimetro del rectangulo: " + perimetro);*/
+        System.out.println("Perimetro del rectangulo: " + perimetro);
 
         Coche coche1 = new Coche();
         coche1.acelerar(5);
         coche1.mostrarVelocidadActual();
         coche1.frenar(2);
-        coche1.mostrarVelocidadActual();
+        coche1.mostrarVelocidadActual();*/
 
         Persona persona1 = new Persona("Sofia", 17, "Argerich 1234");
         Persona persona2 = new Persona();
@@ -50,5 +50,8 @@ public class Main {
         System.out.println("124:" + cafetera1.getCantActual());
         cafetera1.servirTaza(20);
         System.out.println("taza20: " + cafetera1.getCantActual());
+
+        Cancion cancion1 = new Cancion("hola","Sofia Toledo");
+        cancion1.mostrarDatos();
     }
 }
