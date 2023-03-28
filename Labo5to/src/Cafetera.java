@@ -13,7 +13,7 @@ public class Cafetera {
         this.cantMax = cantMax;
         this.cantActual = cantActual;
         if(cantActual>cantMax){
-            cantMax = cantActual;
+            cantActual = cantMax;
         }
     }
 

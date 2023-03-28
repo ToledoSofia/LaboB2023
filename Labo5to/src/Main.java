@@ -39,7 +39,7 @@ public class Main {
         Libro libro1 =  new Libro("titulo",persona1, "123abc",1400,"Nova", fecha1);
         Libro libro2 = new Libro("titulo2", persona1, fecha2);
         libro1.mostrarInformacion();
-        libro1.libroAnterior(libro2);
+        libro1.libroAnterior(libro2.getFecha());
 
         Cafetera cafetera1 = new Cafetera();
         cafetera1.llenarCafetera();
@@ -51,7 +51,7 @@ public class Main {
         cafetera1.servirTaza(20);
         System.out.println("taza20: " + cafetera1.getCantActual());
 
-        Cancion cancion1 = new Cancion("hola","Sofia Toledo");
+        Cancion cancion1 = new Cancion("titulo",persona1);
         cancion1.mostrarDatos();
     }
 }

@@ -1,20 +1,20 @@
 public class Cancion {
     private String titulo;
-    private String autor;
+    private Persona autor;
     public Cancion(){
         titulo = "";
-        autor = "";
+        autor = new Persona();
     }
-    public Cancion(String titulo, String autor){
+    public Cancion(String titulo, Persona autor){
         this.titulo = titulo;
         this.autor = autor;
     }
 
-    public String getAutor() {
+    public Persona getAutor() {
         return autor;
     }
 
-    public void setAutor(String autor) {
+    public void setAutor(Persona autor) {
         this.autor = autor;
     }
 
@@ -27,6 +27,6 @@ public class Cancion {
     }
     public void mostrarDatos(){
         System.out.println("titulo: " + titulo);
-        System.out.println("autor: " + autor );
+        System.out.println("AUTOR:\nNombre: " + autor.getNombre() + "\nEdad: " + autor.getEdad() + "\nDireccion: " + autor.getDireccion());
     }
 }

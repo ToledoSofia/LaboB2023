@@ -85,11 +85,8 @@ public class Libro {
         System.out.print("Fecha: ");
         fecha.corta();
     }
-    public void libroAnterior(Libro libro){
-        Fecha fecha1 = new Fecha();
-        Fecha fecha2 = new Fecha();
-        fecha1 = this.fecha;
-        fecha2 = libro.fecha;
+    public void libroAnterior(Fecha fecha2){
+        Fecha fecha1 = this.fecha;
         fecha1.menorQue(fecha2);
     }
 }
