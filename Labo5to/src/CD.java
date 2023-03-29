@@ -12,7 +12,6 @@ public class CD {
     public ArrayList<Cancion> getCanciones() {
         return canciones;
     }
-
     public void setCanciones(ArrayList<Cancion> canciones) {
         this.canciones = canciones;
     }

@@ -4,20 +4,24 @@ public class Alumno {
     private String nombre;
     private String apellido;
     private Fecha fecha;
-    private ArrayList<Double>notas;
+    //private ArrayList<Double>notas;
+    private ArrayList<Materia>materias;
     public Alumno(){
         nombre = "";
         apellido =  "";
         fecha = new Fecha();
-        notas = new ArrayList<Double>();
+        //notas = new ArrayList<Double>();
+        materias = new ArrayList<Materia>();
     }
-    public Alumno(String nombre, String apellido,ArrayList<Double>notas){
+    public Alumno(String nombre, String apellido,ArrayList<Materia>materias){
         this.nombre = nombre;
         this.apellido = apellido;
-        this.notas = notas;
-        validarNotas();
+        this.materias = materias;
     }
-
+    public Alumno(String nombre, String apellido){
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
     public String getNombre() {
         return nombre;
     }
@@ -41,40 +45,26 @@ public class Alumno {
     public void setFecha(Fecha fecha) {
         this.fecha = fecha;
     }
-
-    public ArrayList<Double> getNotas() {
-        return notas;
+    public ArrayList<Materia> getMaterias() {
+        return materias;
     }
 
-    public void setNotas(ArrayList<Double> notas) {
-        this.notas = notas;
+    public void setMaterias(ArrayList<Materia> materias) {
+        this.materias = materias;
     }
-    public void validarNotas(){
-        for(int i = 0; i<notas.size(); i++){
-            if(notas.get(i)<0){
-                notas.set(i,1.0);
+
+    public void agregarMateria(Materia materia){
+        materias.add(materia);
+    }
+    public Double promedioAlumno(){
+        Double promedio = 0.0;
+        int cantidadNotas = 0;
+        for(Materia materia : materias){
+            cantidadNotas += materia.getNotas().size();
+            for(Double nota : materia.getNotas()){
+                promedio += nota;
             }
         }
-    }
-    public void agregarNota(double nota){
-        notas.add(nota);
-    }
-    public double menorNota(){
-        double menor = notas.get(0);
-        for(Double nota : notas){
-            if(nota<menor){
-                menor = nota;
-            }
-        }
-        return menor;
-    }
-    public double mayorNota(){
-        double mayor = notas.get(0);
-        for(Double nota : notas){
-            if(nota>mayor){
-                mayor = nota;
-            }
-        }
-        return mayor;
+        return promedio/cantidadNotas;
     }
 }
