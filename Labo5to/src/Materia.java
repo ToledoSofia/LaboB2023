@@ -39,7 +39,7 @@ public class Materia {
     public void agregarNota(double nota){
         notas.add(nota);
     }
-    public double menorNota(){
+    public double menorNota(){//pasar alumno
         double menor = 10;
         for(Double nota : notas){
             if(nota<menor){
@@ -48,7 +48,7 @@ public class Materia {
         }
         return menor;
     }
-    public double mayorNota(){
+    public double mayorNota(){//pasar alumno
         double mayor = 0;
         for(Double nota : notas){
             if(nota>mayor){

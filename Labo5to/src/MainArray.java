@@ -90,6 +90,5 @@ public class MainArray {
 
         System.out.println("promedio total: " + alumno1.promedioAlumno());
         System.out.println("promedio materia1: " + alumno1.getMaterias().get(0).promedioMateria());
-    //terminar
     }
 }

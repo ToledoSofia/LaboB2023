@@ -21,6 +21,7 @@ public class Alumno {
     public Alumno(String nombre, String apellido){
         this.nombre = nombre;
         this.apellido = apellido;
+        this.materias = new ArrayList<Materia>();
     }
     public String getNombre() {
         return nombre;
@@ -49,18 +50,18 @@ public class Alumno {
         return materias;
     }
 
-    public void setMaterias(ArrayList<Materia> materias) {
+    public void setMaterias(ArrayList<Materia>materias) {
         this.materias = materias;
     }
 
-    public void agregarMateria(Materia materia){
-        materias.add(materia);
+    public void agregarMateria(Materia m1){
+        materias.add(m1);
     }
     public Double promedioAlumno(){
         Double promedio = 0.0;
         int cantidadNotas = 0;
         for(Materia materia : materias){
-            cantidadNotas += materia.getNotas().size();
+            cantidadNotas += materia.getNotas().size();//suma la cantidad de notas por materia
             for(Double nota : materia.getNotas()){
                 promedio += nota;
             }
