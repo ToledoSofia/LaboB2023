@@ -1,16 +1,35 @@
 public class Partidos {
     private Equipo e1;
     private Equipo e2;
-    private int dia;
-    private int horario;
+    private String dia;
+    private String horario;
     public Partidos(){
         e1 = new Equipo();
         e2 = new Equipo();
-        dia = 1;
-        horario = 1;
+        dia = "";
+        horario = "";
     }
 
-    public Partidos(Equipo e1, Equipo e2, int dia, int horario) {
+    public Partidos (Equipo e1, Equipo e2){//falta 0
+        this.e1 = e1;
+        this.e2 = e2;
+        int j = 0;
+        while(e1.getTurno().get(j) != e2.getTurno().get(j) && j<6){
+            j++;
+        }
+        if(e1.getTurno().get(j) == e2.getTurno().get(j)){
+            dia = palabrasDia(j+1);
+            if(e1.getTurno().get(j)==1){
+                horario = "mañana";
+            }else if (e1.getTurno().get(j) == 2){
+                horario = "tarde";
+            }else{
+                horario = "noche";
+            }
+        }
+    }
+
+    public Partidos(Equipo e1, Equipo e2, String dia, String horario) {
         this.e1 = e1;
         this.e2 = e2;
         this.dia = dia;
@@ -33,21 +52,35 @@ public class Partidos {
         this.e2 = e2;
     }
 
-    public int getDia() {
+    public String getDia() {
         return dia;
     }
 
-    public void setDia(int dia) {
+    public void setDia(String dia) {
         this.dia = dia;
     }
 
-    public int getHorario() {
+    public String getHorario() {
         return horario;
     }
 
-    public void setHorario(int horario) {
+    public void setHorario(String horario) {
         this.horario = horario;
     }
-
-
+    public String palabrasDia(int num){
+        switch(num){
+            case 1:
+                return "lunes";
+            case 2 :
+                return "martes";
+            case 3:
+                return "miércoles";
+            case 4:
+                return "jueves";
+            case 5:
+                return "viernes";
+            default:
+                return "sabado";
+        }
+    }
 }

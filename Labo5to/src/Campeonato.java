@@ -1,18 +1,25 @@
 import java.util.ArrayList;
 
 public class Campeonato {
-    //private ArrayList<Equipo>equipos;
+    private ArrayList<Equipo>equipos;
     private ArrayList<Partidos>partidos;
     public Campeonato (){
-        //equipos = new ArrayList<Equipo>();
+        equipos = new ArrayList<Equipo>();
 
         partidos = new ArrayList<Partidos>();
     }
-
-    /*public Campeonato(ArrayList<Equipo>equipos) {
+    public Campeonato(ArrayList<Equipo>equipos){
         this.equipos = equipos;
-    }*/
+        partidos = new ArrayList<Partidos>();
+    }
 
+    public ArrayList<Equipo> getEquipos() {
+        return equipos;
+    }
+
+    public void setEquipos(ArrayList<Equipo> equipos) {
+        this.equipos = equipos;
+    }
     public ArrayList<Partidos> getPartidos() {
         return partidos;
     }
@@ -62,23 +69,32 @@ public class Campeonato {
             j++;
         }
     }*/
-    public String palabrasDia(int num){
-        switch(num){
-            case 1:
-                return "lunes";
-            case 2 :
-                return "martes";
-            case 3:
-                return "miércoles";
-            case 4:
-                return "jueves";
-            case 5:
-                return "viernes";
-            default:
-                return "sabado";
+    public void agregarEquipo(Equipo equipo){
+        equipos.add(equipo);
+    }
+    public void armarPartidos(){
+        Equipo e1, e2;
+        ArrayList<Equipo>equipos2 = equipos;
+        int j = 0;
+        Partidos p1;
+        while(equipos2.size()>1) {
+            for (int i = 1; i < equipos2.size(); i++) {//usar con en vez de duplicar arraylist
+                e1 = equipos2.get(0);
+                e2 = equipos2.get(i);
+                j = 0;
+                while (e1.getTurno().get(j) != e2.getTurno().get(j) && j < 6) {
+                    j++;
+                }
+                if (e1.getTurno().get(j) == e2.getTurno().get(j)) {
+                    p1 = new Partidos(e1, e2);
+                    partidos.add(p1);
+                }
+            }
+             equipos2.remove(0);
         }
     }
-    public void agregarPartido(Equipo equipo1, Equipo equipo2){
+
+    /*public void agregarPartido(Equipo equipo1, Equipo equipo2){
         Partidos p1 = new Partidos();
         ArrayList<Integer>turno1 = equipo1.getTurno();
         ArrayList<Integer>turno2 = equipo2.getTurno();
@@ -98,19 +114,14 @@ public class Campeonato {
         }else{
             System.out.println("No se pudo agregar partido porque los horarios nunca coinciden");
         }
-    }
+    }*/
     public void mostrarFixture(){
         int i = 1;
-        String diaLetras, turno;
         for(Partidos partido:partidos){
             System.out.println("--------------------");
             System.out.println("PARTIDO " + i);
-            diaLetras = palabrasDia(partido.getDia());
             System.out.println(partido.getE1().getNombre() + " vs " + partido.getE2().getNombre());
-            if(partido.getHorario()==1){turno = "Mañana";}
-            else if(partido.getHorario()==2){turno = "Tarde";}
-            else{turno = "Noche";}
-            System.out.println("Dia: " + diaLetras + "\nTurno: " + turno);
+            System.out.println("Dia: " + partido.getDia() + "\nTurno: " + partido.getHorario());
             i++;
         }
     }

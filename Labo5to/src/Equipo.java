@@ -4,13 +4,15 @@ import java.util.Scanner;
 public class Equipo {
     private String nombre;
     private String barrio;
-    private ArrayList<Integer>turno;
+    private ArrayList<Integer>turno;//0
     private ArrayList<Jugador>jugadores;
+    private Jugador capitan;
     public Equipo(){
         nombre = "";
         barrio = "";
         turno = new ArrayList<Integer>(6);
         jugadores = new ArrayList<Jugador>(10);
+        capitan = new Jugador();
     }
     public Equipo(String nombre, ArrayList<Integer>turno, ArrayList<Jugador> jugadores) {
         this.nombre = nombre;
@@ -19,12 +21,20 @@ public class Equipo {
         if(validarCamisetas()==true){
             jugadores = new ArrayList<Jugador>();
         }
+        capitan = jugadores.get(0);
     }
     public Equipo(ArrayList<Jugador>jugadores){
         this.jugadores = jugadores;
         if(validarCamisetas()){
             jugadores = new ArrayList<Jugador>();
         }
+    }
+    public Jugador getCapitan() {
+        return capitan;
+    }
+
+    public void setCapitan(Jugador capitan) {
+        this.capitan = capitan;
     }
 
     public ArrayList<Integer> getTurno() {
@@ -75,5 +85,6 @@ public class Equipo {
         }
         return iguales;
     }
+    //agregar jugador con camiseta y cant de jugadores.
 
 }

@@ -9,6 +9,10 @@ public class MainCampeonato {
         turno.add(1);
         turno.add(1);
         turno.add(2);
+        /*System.out.println("turno: ");
+        for(int i = 0; i<turno.size(); i++){
+            System.out.print(turno.get(i) + " - ");
+        }*/
 
         ArrayList<Integer>turno2 = new ArrayList<Integer>(6);
         turno2.add(2);
@@ -17,7 +21,23 @@ public class MainCampeonato {
         turno2.add(1);
         turno2.add(1);
         turno2.add(2);
+        /*System.out.println("turno2: ");
+        for(int i = 0; i<turno2.size(); i++){
+            System.out.print(turno2.get(i) + " - ");
+        }*/
         ArrayList<Jugador>jugadores = new ArrayList<Jugador>(10);
+
+        ArrayList<Integer>turno3 = new ArrayList<Integer>(6);
+        turno3.add(3);
+        turno3.add(1);
+        turno3.add(3);
+        turno3.add(1);
+        turno3.add(1);
+        turno3.add(2);
+        /*System.out.println("turno3: ");
+        for(int i = 0; i<turno.size(); i++){
+            System.out.print(turno3.get(i) + " - ");
+        }*/
 
         jugadores.add(new Jugador("Natalia", 10));
         jugadores.add( new Jugador("Belen", 1));
@@ -32,10 +52,13 @@ public class MainCampeonato {
 
         Equipo e1 = new Equipo("eq1",turno,jugadores);
         Equipo e2 = new Equipo("eq2",turno2,jugadores);
+        Equipo e3 = new Equipo("eq3",turno3,jugadores);
 
         Campeonato c1 = new Campeonato();
-        c1.agregarPartido(e1,e2);
-        c1.agregarPartido(e1,e2);
+        c1.agregarEquipo(e1);
+        c1.agregarEquipo(e2);
+        c1.agregarEquipo(e3);
+        c1.armarPartidos();
         c1.mostrarFixture();
 
 
