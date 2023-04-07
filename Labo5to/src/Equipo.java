@@ -85,6 +85,33 @@ public class Equipo {
         }
         return iguales;
     }
-    //agregar jugador con camiseta y cant de jugadores.
+    public void agregarJugador(Jugador jugador){
+        boolean agregar = true;
+        if(jugadores.size()<10){
+            for(int i = 0; i<jugadores.size() && agregar == true; i++){
+                if(jugadores.get(i).getNumCamiseta() == jugador.getNumCamiseta()){
+                    agregar = false;
+                }
+            }
+            if(agregar){
+                jugadores.add(jugador);
+                System.out.println("---El jugador ha sido egregado correctamente---");
+            }else{
+                System.out.println("---Ya existe un jugador con esa camiseta---");
+            }
+        }else{
+            System.out.println("El equipo ya está completo");
+        }
+    }
+    public void eliminarJugador(int numCamiseta){
+        boolean jugadorEliminado = false;
+        for(int i = 0; i<jugadores.size() && !jugadorEliminado; i++){
+            if(jugadores.get(i).getNumCamiseta() == numCamiseta){
+                jugadores.remove(i);
+                jugadorEliminado = true;
+                System.out.println("---Jugador eliminado---");
+            }
+        }
+    }
 
 }

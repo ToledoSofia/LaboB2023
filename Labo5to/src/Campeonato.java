@@ -72,49 +72,22 @@ public class Campeonato {
     public void agregarEquipo(Equipo equipo){
         equipos.add(equipo);
     }
+
     public void armarPartidos(){
-        Equipo e1, e2;
-        ArrayList<Equipo>equipos2 = equipos;
-        int j = 0;
+        Equipo e1 =  new Equipo(), e2 = new Equipo();
         Partidos p1;
-        while(equipos2.size()>1) {
-            for (int i = 1; i < equipos2.size(); i++) {//usar con en vez de duplicar arraylist
-                e1 = equipos2.get(0);
-                e2 = equipos2.get(i);
-                j = 0;
-                while (e1.getTurno().get(j) != e2.getTurno().get(j) && j < 6) {
-                    j++;
-                }
+        for(int i = 0; i<equipos.size()-1; i++){
+            for(int j = i+1; j<equipos.size(); j++){
+                e1 = equipos.get(i);
+                e2 = equipos.get(j);
                 if (e1.getTurno().get(j) == e2.getTurno().get(j)) {
                     p1 = new Partidos(e1, e2);
                     partidos.add(p1);
                 }
             }
-             equipos2.remove(0);
         }
     }
 
-    /*public void agregarPartido(Equipo equipo1, Equipo equipo2){
-        Partidos p1 = new Partidos();
-        ArrayList<Integer>turno1 = equipo1.getTurno();
-        ArrayList<Integer>turno2 = equipo2.getTurno();
-        boolean coinciden = false;
-        int i;
-        for(i = 0; i<turno1.size() && !coinciden; i++){
-            if(turno1.get(i) == turno2.get(i)){
-                coinciden = true;
-            }
-        }
-        if(coinciden){
-            p1.setDia(i);
-            p1.setHorario(turno1.get(i));
-            p1.setE1(equipo1);
-            p1.setE2(equipo2);
-            partidos.add(p1);
-        }else{
-            System.out.println("No se pudo agregar partido porque los horarios nunca coinciden");
-        }
-    }*/
     public void mostrarFixture(){
         int i = 1;
         for(Partidos partido:partidos){

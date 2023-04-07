@@ -54,6 +54,9 @@ public class MainCampeonato {
         Equipo e2 = new Equipo("eq2",turno2,jugadores);
         Equipo e3 = new Equipo("eq3",turno3,jugadores);
 
+        e1.eliminarJugador(8);
+        e1.agregarJugador(new Jugador("lola", 24));
+
         Campeonato c1 = new Campeonato();
         c1.agregarEquipo(e1);
         c1.agregarEquipo(e2);
