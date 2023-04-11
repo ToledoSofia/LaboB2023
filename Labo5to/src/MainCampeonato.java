@@ -1,3 +1,5 @@
+import personas.Jugador;
+
 import java.util.ArrayList;
 
 public class MainCampeonato {

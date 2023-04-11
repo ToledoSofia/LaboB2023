@@ -1,6 +1,8 @@
+package tiempo;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Calendar;
+
 public class Fecha {
     private int dia;
     private int mes;

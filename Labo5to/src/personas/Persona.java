@@ -1,3 +1,5 @@
+package personas;
+
 public class Persona {
     private String nombre;
     private int edad;
@@ -12,6 +14,11 @@ public class Persona {
         this.nombre  = n;
         this.edad = e;
         this.direccion = d;
+    }
+    public Persona(String nombre){
+        this.nombre = nombre;
+        edad = 1;
+        direccion = "";
     }
 
     public int getEdad() {

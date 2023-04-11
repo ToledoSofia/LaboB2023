@@ -1,16 +1,16 @@
-public class Partidos {
+public class Partido {
     private Equipo e1;
     private Equipo e2;
     private String dia;
     private String horario;
-    public Partidos(){
+    public Partido(){
         e1 = new Equipo();
         e2 = new Equipo();
         dia = "";
         horario = "";
     }
 
-    public Partidos (Equipo e1, Equipo e2){//falta 0
+    public Partido (Equipo e1, Equipo e2){//falta 0
         this.e1 = e1;
         this.e2 = e2;
         int j = 0;
@@ -29,7 +29,7 @@ public class Partidos {
         }
     }
 
-    public Partidos(Equipo e1, Equipo e2, String dia, String horario) {
+    public Partido(Equipo e1, Equipo e2, String dia, String horario) {
         this.e1 = e1;
         this.e2 = e2;
         this.dia = dia;

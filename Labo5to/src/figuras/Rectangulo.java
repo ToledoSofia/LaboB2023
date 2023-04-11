@@ -1,6 +1,6 @@
-import java.util.Scanner;
+package figuras;
 
-public class Rectangulo {
+public class Rectangulo extends FiguraGeometrica{
     private double base;
     private double altura;
 
@@ -25,10 +25,20 @@ public class Rectangulo {
         this.altura = altura;
     }
 
+    @Override
+    public double calcularArea() {
+        return base * altura;
+    }
+
+    @Override
+    public double calcularPerimetro() {
+        return base*2 + altura*2;
+    }
+/*
     public double calculoArea(){
         return base * altura;
     }
     public double calculoPerimetro (){
         return base*2 + altura*2;
-    }
+    }*/
 }

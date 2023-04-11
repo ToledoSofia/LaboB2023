@@ -1,5 +1,7 @@
+import materias.Materia;
+import personas.Alumno;
+
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class MainArray {
     public static void main(String[] args) {
@@ -38,11 +40,11 @@ public class MainArray {
             }
         }
         //ej3
-        ArrayList<Persona>personas = new ArrayList<Persona>();
-        personas.add(new Persona("Natalia",17,"Calle1 1234"));
-        personas.add(new Persona("Belen",34,"Calle2 1234"));
-        personas.add(new Persona("Bianca",47,"Calle3 1234"));
-        for(Persona p1 : personas){
+        ArrayList<personas.Persona>personas = new ArrayList<personas.Persona>();
+        personas.add(new personas.Persona("Natalia",17,"Calle1 1234"));
+        personas.add(new personas.Persona("Belen",34,"Calle2 1234"));
+        personas.add(new personas.Persona("Bianca",47,"Calle3 1234"));
+        for(personas.Persona p1 : personas){
             if(p1.getEdad()>30){
                 System.out.println("----------------");
                 System.out.println("Nombre: " + p1.getNombre() + "\nEdad: " + p1.getEdad() + "\nDireccion: " + p1.getDireccion());
@@ -51,7 +53,7 @@ public class MainArray {
 
         //4
         CD cd1 =  new CD();
-        Persona p1 = new Persona("Sofia",17,"errerre");
+        personas.Persona p1 = new personas.Persona("Sofia",17,"errerre");
         Cancion c1 = new Cancion("titulo", p1);
         cd1.getCanciones().add(c1);
         cd1.getCanciones().add(new Cancion());

@@ -1,4 +1,5 @@
-import java.util.Scanner;
+import personas.Persona;
+import tiempo.Fecha;
 
 public class Main {
     public static void main(String[] args) {
@@ -7,13 +8,13 @@ public class Main {
         double base = numero.nextDouble();
         System.out.println("Ingrese la altura del rectangulo");
         double altura = numero.nextDouble();
-        Rectangulo r1 = new Rectangulo(base, altura);
+        figuras.Rectangulo r1 = new figuras.Rectangulo(base, altura);
         double area = r1.calculoArea();
         double perimetro = r1.calculoPerimetro();
         System.out.println("area del rectangulo: " + area);
         System.out.println("Perimetro del rectangulo: " + perimetro);
 
-        Coche coche1 = new Coche();
+        vehiculos.Coche coche1 = new vehiculos.Coche();
         coche1.acelerar(5);
         coche1.mostrarVelocidadActual();
         coche1.frenar(2);

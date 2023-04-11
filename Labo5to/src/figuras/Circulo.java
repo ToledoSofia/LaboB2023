@@ -1,6 +1,6 @@
-import java.util.Scanner;
+package figuras;
 
-public class Circulo {
+public class Circulo extends FiguraGeometrica{
     private double radio;
     public Circulo(){
         this.radio = 2;
@@ -15,6 +15,22 @@ public class Circulo {
         this.radio = radio;
     }
 
+    @Override
+    public double calcularArea() {
+        return Math.PI * Math.pow(radio, 2);
+    }
+
+    @Override
+    public double calcularPerimetro() {
+        return 2 * Math.PI * radio;
+    }
+
+    public static void main(String[] args) {
+        Circulo c1 = new Circulo(2);
+        System.out.println(c1.calcularArea());
+        System.out.println(c1.calcularPerimetro());
+    }
+    /*
     public double calculoArea(){
         return Math.PI * Math.pow(radio, 2);
     }
@@ -26,11 +42,11 @@ public class Circulo {
         Scanner numero = new Scanner(System.in);
         double radio = numero.nextInt();
 
-        Circulo c1 = new Circulo(radio);
+        figuras.Circulo c1 = new figuras.Circulo(radio);
         double area = c1.calculoArea();
         System.out.println("area del circulo: " + area);
 
         double perimetro = c1.calculoPerimetro();
         System.out.println("perimetro del circulo: " + perimetro);
-    }
+    }*/
 }

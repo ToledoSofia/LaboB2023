@@ -1,5 +1,6 @@
+import personas.Jugador;
+
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Equipo {
     private String nombre;
@@ -109,7 +110,7 @@ public class Equipo {
             if(jugadores.get(i).getNumCamiseta() == numCamiseta){
                 jugadores.remove(i);
                 jugadorEliminado = true;
-                System.out.println("---Jugador eliminado---");
+                System.out.println("---personas.Jugador eliminado---");
             }
         }
     }

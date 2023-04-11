@@ -1,36 +1,33 @@
+package personas;
+import tiempo.Fecha;
+import materias.Materia;
 import java.util.ArrayList;
 
-public class Alumno {
-    private String nombre;
+public class Alumno extends Persona {
+    //private String nombre;
     private String apellido;
     private Fecha fecha;
     //private ArrayList<Double>notas;
     private ArrayList<Materia>materias;
     public Alumno(){
-        nombre = "";
+        super();
+        //nombre = "";
         apellido =  "";
         fecha = new Fecha();
         //notas = new ArrayList<Double>();
         materias = new ArrayList<Materia>();
     }
-    public Alumno(String nombre, String apellido,ArrayList<Materia>materias){
-        this.nombre = nombre;
+    public Alumno(String nombre,int edad, String direccion, String apellido,ArrayList<Materia>materias){
+        super(nombre, edad, direccion);
+        //this.nombre = nombre;
         this.apellido = apellido;
         this.materias = materias;
     }
     public Alumno(String nombre, String apellido){
-        this.nombre = nombre;
+        //this.nombre = nombre;
         this.apellido = apellido;
         this.materias = new ArrayList<Materia>();
     }
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
     public String getApellido() {
         return apellido;
     }
@@ -52,6 +49,11 @@ public class Alumno {
 
     public void setMaterias(ArrayList<Materia>materias) {
         this.materias = materias;
+    }
+
+    @Override
+    public void mostrarDatos() {
+        super.mostrarDatos();
     }
 
     public void agregarMateria(Materia m1){

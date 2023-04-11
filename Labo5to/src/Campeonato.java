@@ -2,15 +2,15 @@ import java.util.ArrayList;
 
 public class Campeonato {
     private ArrayList<Equipo>equipos;
-    private ArrayList<Partidos>partidos;
+    private ArrayList<Partido>partidos;
     public Campeonato (){
         equipos = new ArrayList<Equipo>();
 
-        partidos = new ArrayList<Partidos>();
+        partidos = new ArrayList<Partido>();
     }
     public Campeonato(ArrayList<Equipo>equipos){
         this.equipos = equipos;
-        partidos = new ArrayList<Partidos>();
+        partidos = new ArrayList<Partido>();
     }
 
     public ArrayList<Equipo> getEquipos() {
@@ -20,11 +20,11 @@ public class Campeonato {
     public void setEquipos(ArrayList<Equipo> equipos) {
         this.equipos = equipos;
     }
-    public ArrayList<Partidos> getPartidos() {
+    public ArrayList<Partido> getPartidos() {
         return partidos;
     }
 
-    public void setPartidos(ArrayList<Partidos> partidos) {
+    public void setPartidos(ArrayList<Partido> partidos) {
         this.partidos = partidos;
     }
     /*
@@ -75,13 +75,13 @@ public class Campeonato {
 
     public void armarPartidos(){
         Equipo e1 =  new Equipo(), e2 = new Equipo();
-        Partidos p1;
+        Partido p1;
         for(int i = 0; i<equipos.size()-1; i++){
             for(int j = i+1; j<equipos.size(); j++){
                 e1 = equipos.get(i);
                 e2 = equipos.get(j);
                 if (e1.getTurno().get(j) == e2.getTurno().get(j)) {
-                    p1 = new Partidos(e1, e2);
+                    p1 = new Partido(e1, e2);
                     partidos.add(p1);
                 }
             }
@@ -90,7 +90,7 @@ public class Campeonato {
 
     public void mostrarFixture(){
         int i = 1;
-        for(Partidos partido:partidos){
+        for(Partido partido:partidos){
             System.out.println("--------------------");
             System.out.println("PARTIDO " + i);
             System.out.println(partido.getE1().getNombre() + " vs " + partido.getE2().getNombre());

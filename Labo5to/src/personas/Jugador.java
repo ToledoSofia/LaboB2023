@@ -1,26 +1,26 @@
+package personas;
+import tiempo.Fecha;
 import java.util.Scanner;
 
-public class Jugador {
-    private String nombre;
+public class Jugador extends Persona {
+    //private String nombre;
     private Fecha fechaNacimiento;
     private int numCamiseta;
     public Jugador(){
-        nombre = "";
+        super();
+        //nombre = "";
         fechaNacimiento = new Fecha();
         numCamiseta = 1;
     }
 
-    public Jugador(String nombre, int numCamiseta) {
-        this.nombre = nombre;
+    public Jugador(String nombre, int edad, String direccion, int numCamiseta) {
+        super(nombre, edad, direccion);
+        //this.nombre = nombre;
         this.numCamiseta = numCamiseta;
     }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public Jugador(String nombre, int numCamiseta){
+        super();
+        this.numCamiseta = numCamiseta;
     }
 
     public Fecha getFechaNacimiento() {
@@ -39,5 +39,8 @@ public class Jugador {
         this.numCamiseta = numCamiseta;
     }
 
-
+    @Override
+    public void mostrarDatos() {
+        super.mostrarDatos();
+    }
 }

@@ -1,3 +1,6 @@
+import personas.Persona;
+import tiempo.Fecha;
+
 public class Libro {
     private String titulo;
     private Persona autor;
@@ -82,7 +85,7 @@ public class Libro {
         System.out.println("AUTOR:\nNombre: " + autor.getNombre() + "\nEdad: " + autor.getEdad() + "\nDireccion: " + autor.getDireccion() + "\n------------");
         System.out.println("ISBN: " + ISBN);
         System.out.println("Editorial: " + editorial + "\nCantidad de paginas: " + cantidadPaginas);
-        System.out.print("Fecha: ");
+        System.out.print("tiempo.Fecha: ");
         fecha.corta();
     }
     public void libroAnterior(Fecha fecha2){
