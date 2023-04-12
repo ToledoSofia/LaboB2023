@@ -2,12 +2,14 @@ package personas;
 
 public class Persona {
     private String nombre;
+    private String apellido;
     private int edad;
     private String direccion;
 
     public Persona(){
         this.nombre = "";
         this.edad = 0;
+        apellido = "";
         this.direccion = "";
     }
     public Persona (String n, int e, String d){
@@ -15,10 +17,28 @@ public class Persona {
         this.edad = e;
         this.direccion = d;
     }
+    public Persona(String nombre, String apellido){
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
+    public Persona (String n, int e, String d, String apellido){
+        this.nombre  = n;
+        this.edad = e;
+        this.apellido = apellido;
+        this.direccion = d;
+    }
     public Persona(String nombre){
         this.nombre = nombre;
         edad = 1;
         direccion = "";
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
     public int getEdad() {

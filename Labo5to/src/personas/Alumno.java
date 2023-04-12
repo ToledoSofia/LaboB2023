@@ -5,35 +5,37 @@ import java.util.ArrayList;
 
 public class Alumno extends Persona {
     //private String nombre;
-    private String apellido;
+    //private String apellido;
     private Fecha fecha;
     //private ArrayList<Double>notas;
     private ArrayList<Materia>materias;
+    private String division;
     public Alumno(){
         super();
         //nombre = "";
-        apellido =  "";
         fecha = new Fecha();
         //notas = new ArrayList<Double>();
         materias = new ArrayList<Materia>();
+        division = "";
     }
     public Alumno(String nombre,int edad, String direccion, String apellido,ArrayList<Materia>materias){
-        super(nombre, edad, direccion);
+        super(nombre, edad, direccion, apellido);
         //this.nombre = nombre;
-        this.apellido = apellido;
         this.materias = materias;
     }
     public Alumno(String nombre, String apellido){
         //this.nombre = nombre;
-        this.apellido = apellido;
+        //this.apellido = apellido;
+        super(nombre, apellido);
         this.materias = new ArrayList<Materia>();
     }
-    public String getApellido() {
-        return apellido;
+
+    public String getDivision() {
+        return division;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public void setDivision(String division) {
+        this.division = division;
     }
 
     public Fecha getFecha() {
