@@ -1,5 +1,6 @@
 import personas.Profesor;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Bufet {
@@ -42,7 +43,7 @@ public class Bufet {
         double precio2;
         double precioFinal;
         for(Pedido pedido : pedidos){
-            if(pedido.isEntregado() == false) {
+            if(pedido.getFechaCreacion() == LocalDate.now()){
                 if (pedido.getPersona() instanceof Profesor) {
                     precio2 = pedido.getPlato().getPrecio();
                     System.out.println(pedido.getPlato().toString() + "Descuento: " + ((Profesor) pedido.getPersona()).getPorcentajeDescuento() + "%\nPrecio final: $" + (precio2 - (((Profesor) pedido.getPersona()).getPorcentajeDescuento() * precio2/100)));
@@ -53,3 +54,5 @@ public class Bufet {
         }
     }
 }
+//modificar plato, elimiar plato
+//lo mismo con pedidos
