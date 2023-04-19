@@ -1,10 +1,11 @@
 package pagos;
 
-public class Tarjeta {
+public class Tarjeta extends MetodoPago {
     private int numero;
     private String banco;
     private boolean creditoDebito;//0.credito 1.debito
     public Tarjeta(){
+        super();
         numero = 0;
         banco = "";
     }

@@ -38,21 +38,44 @@ public class Bufet {
     public void agregarPedido(Pedido pedido){
         pedidos.add(pedido);
     }
-
+    public void eliminarPedido(Pedido p1){
+        for(Pedido pedido: pedidos){
+            if(pedido.equals(p1)){
+                pedidos.remove(pedido);
+            }
+        }
+    }
+    public void eliminarPlato(Plato p1){
+        for(Plato plato : platos){
+            if(plato.equals(p1)){
+                platos.remove(plato);
+            }
+        }
+    }
     public void mostrarListado(){
         double precio2;
         double precioFinal;
         for(Pedido pedido : pedidos){
             if(pedido.getFechaCreacion() == LocalDate.now()){
-                if (pedido.getPersona() instanceof Profesor) {
-                    precio2 = pedido.getPlato().getPrecio();
-                    System.out.println(pedido.getPlato().toString() + "Descuento: " + ((Profesor) pedido.getPersona()).getPorcentajeDescuento() + "%\nPrecio final: $" + (precio2 - (((Profesor) pedido.getPersona()).getPorcentajeDescuento() * precio2/100)));
-                }else{
-                    System.out.println(pedido.getPlato().toString());
-                }
+                System.out.println(pedido.getPlato().toString() + "Precio Final: $" + pedido.calcularPrecio());
+            }
+        }
+    }
+    public void modificarPlato(Plato modificar, Plato nuevo){
+        for(Plato plato : platos){
+            if(plato.equals(modificar)){
+                platos.remove(plato);
+                platos.add(nuevo);
+            }
+        }
+    }
+    public void modificarPedido(Pedido modificar, Pedido nuevo){
+        for(Pedido pedido : pedidos){
+            if(pedido.equals(modificar)){
+                pedidos.remove(pedido);
+                pedidos.add(nuevo);
             }
         }
     }
 }
-//modificar plato, elimiar plato
-//lo mismo con pedidos
+

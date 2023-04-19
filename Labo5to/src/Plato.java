@@ -26,11 +26,11 @@ public class Plato {
     public void setPrecio(double precio) {
         this.precio = precio;
     }
-    public void modificarPlato(String nombre, double precio){//bufet
+    /*public void modificarPlato(String nombre, double precio){//bufet
         this.nombre = nombre;
         this.precio = precio;
         System.out.println("-----plato modificado-----");
-    }
+    }*/
 
     @Override
     public String toString() {

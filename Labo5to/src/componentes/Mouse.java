@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class Mouse extends Periferico{
     private String tipoConector;
-    private ArrayList<Puerto> puertosValidos;
     public Mouse(){
         super(true);
         tipoConector = "USB";
@@ -23,11 +22,4 @@ public class Mouse extends Periferico{
         this.tipoConector = tipoConector;
     }
 
-    public ArrayList<Puerto> getPuertosValidos() {
-        return puertosValidos;
-    }
-
-    public void setPuertosValidos(ArrayList<Puerto> puertosValidos) {
-        this.puertosValidos = puertosValidos;
-    }
 }

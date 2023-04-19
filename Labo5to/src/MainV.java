@@ -56,8 +56,8 @@ public class MainV {
         bufet.agregarPedido(new Pedido(plato1,a1));
         bufet.agregarPedido(new Pedido(plato3,a2));
 
-        plato3.modificarPlato("Fideos3", 1250);
-        plato2.modificarPlato("Fideos2", plato2.getPrecio());
+        bufet.modificarPlato(plato1,plato2);
+
 
         bufet.mostrarListado();
     }

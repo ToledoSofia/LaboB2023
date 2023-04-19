@@ -69,11 +69,20 @@ public class Pedido {
     public void setEntregado(boolean entregado) {
         this.entregado = entregado;
     }
-    public void modificarPedido(Plato plato, Persona persona, boolean entregado){//bufet
+    /*public void modificarPedido(Plato plato, Persona persona, boolean entregado){//bufet
         this.plato = plato;
         this.persona = persona;
         this.entregado = entregado;
         System.out.println("-----pedido modificado-----");
+    }*/
+    public double calcularPrecio(){
+        double descuento;
+        if(persona instanceof Profesor){
+            descuento = ((Profesor) persona).getPorcentajeDescuento();
+            return descuento * plato.getPrecio()/100;
+        }else{
+            return plato.getPrecio();
+        }
     }
 
 }

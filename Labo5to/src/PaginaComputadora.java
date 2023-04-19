@@ -1,25 +1,18 @@
+import componentes.CPU;
 import componentes.Componente;
+import componentes.Periferico;
 
 import java.util.ArrayList;
 
 public class PaginaComputadora {
     private ArrayList<Componente> componentes;
-    private ArrayList<Computadora>compusVendidas;
     private ArrayList<Compra>ventas;
 
     public PaginaComputadora(){
         componentes =new ArrayList<Componente>();
         ventas = new ArrayList<Compra>();
-        compusVendidas = new ArrayList<Computadora>();
     }
 
-    public ArrayList<Computadora> getCompusVendidas() {
-        return compusVendidas;
-    }
-
-    public void setCompusVendidas(ArrayList<Computadora> compusVendidas) {
-        this.compusVendidas = compusVendidas;
-    }
 
     public ArrayList<Componente> getPerifericos() {
         return componentes;
@@ -36,22 +29,36 @@ public class PaginaComputadora {
     public void setVentas(ArrayList<Compra> ventas) {
         this.ventas = ventas;
     }
+    public boolean comprobarComponentes(Compra compra){
+        boolean cpu = false, entrada = false, salida = false;
+        for(Componente componente : compra.getComponentes()){
+            if(componente instanceof CPU){
+                cpu = true;
+            }else if(componente instanceof Periferico){
+                if(((Periferico) componente).isEntradaSalida()){
+                    entrada = true;
+                }else{
+                    salida = true;
+                }
+            }
+        }
+        if(cpu == false || entrada == false || salida == false){
+            return false;
+        }else{
+            return true;
+        }
+    }
     public void agregarVenta(Compra compra){
-        ventas.add(compra);
-        compusVendidas.add(compra.getComputadora());
+        if(comprobarComponentes(compra)){
+            ventas.add(compra);
+        }else{
+            System.out.println("----compra no valida-----");
+        }
     }
     public void agregarComponente(Componente componente){
         componentes.add(componente);
     }
-    public void realizarCompra(Compra compra){//no me gusta
-        int stock;
-        for(int i = 0; i<compra.getComputadora().getPerifericos().size(); i++){
-            stock = compra.getComputadora().getPerifericos().get(i).getStock();
-            compra.getComputadora().getPerifericos().get(i).setStock(stock-1);
-        }
-        stock = compra.getComputadora().getCpu().getStock();
-        compra.getComputadora().getCpu().setStock(stock-1);
-    }
+
 }
 //agregarPerferico();
 //realizarCompra(); (modificar stock)

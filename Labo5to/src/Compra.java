@@ -1,24 +1,31 @@
+import componentes.CPU;
+import componentes.Componente;
 import componentes.Periferico;
 import personas.Cliente;
 
+import java.util.ArrayList;
+
 public class Compra {
     private Cliente cliente;
-    private Computadora computadora;
-    private boolean metodoPago;//0.efectivo 1.tarjeta
+    private ArrayList<Componente>componentes;
+    private boolean metodoPago;//clase
 
     public Compra(){
         cliente = new Cliente();
-        computadora = new Computadora();
         metodoPago = false;
     }
 
-    public Compra(Computadora computadora, boolean metodoPago) {
-        if(comprobarComponentes(computadora)){
-            this.computadora = computadora;
-            this.metodoPago = metodoPago;
-        }else{
-            System.out.println("-------compra no valida--------");
-        }
+    public Compra(ArrayList<Componente>componentes1, boolean metodoPago) {
+        this.componentes = componentes1;
+        this.metodoPago = metodoPago;
+    }
+
+    public ArrayList<Componente> getComponentes() {
+        return componentes;
+    }
+
+    public void setComponentes(ArrayList<Componente> componentes) {
+        this.componentes = componentes;
     }
 
     public Cliente getCliente() {
@@ -28,15 +35,6 @@ public class Compra {
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
-
-    public Computadora getComputadora() {
-        return computadora;
-    }
-
-    public void setComputadora(Computadora computadora) {
-        this.computadora = computadora;
-    }
-
     public boolean isMetodoPago() {
         return metodoPago;
     }
@@ -44,30 +42,37 @@ public class Compra {
     public void setMetodoPago(boolean metodoPago) {
         this.metodoPago = metodoPago;
     }
-    public boolean comprobarComponentes(Computadora compu){
-        boolean entrada = false, salida = false;
-        for(int i = 0; i<compu.getPerifericos().size() && !entrada && !salida; i++){
-            if(compu.getPerifericos().get(i).isEntradaSalida() == true){
-                entrada = true;
-            }else{
-                salida = true;
+
+
+    public void modificarPeriferico(Componente modificar, Componente nuevo){//periferico
+        for(Componente componente : componentes){
+            if(componente.equals(modificar)){
+                componentes.remove(componente);
+                componentes.add(nuevo);
             }
         }
-        if(!compu.getCpu().getNombre().equals("") || entrada == false || salida == false){
-           return false;
+    }
+    public void agregarComponente(Componente nuevo){//periferico
+        componentes.add(nuevo);
+    }
+    public void eliminarComponente(Componente eliminar){//periferico
+        for(Componente componente : componentes){
+            if(componente.equals(eliminar)){
+                componentes.remove(componente);
+            }
+        }
+    }
+    public double calcularPrecio(){
+        double precioTotal = 0, aumento;
+        for(Componente componente:componentes){
+            precioTotal += componente.getPrecioVenta();
+        }
+        if(metodoPago){//recargo del 5%
+            aumento = 5*precioTotal/100;
+            return precioTotal+aumento;
         }else{
-            return true;
+            return precioTotal;
         }
-    }
-    public double calcularPrecioTotal(){
-        double precioTotal = 0;
-        for(int i = 0; i<computadora.getPerifericos().size(); i++){
-            precioTotal += computadora.getPerifericos().get(i).getPrecioVenta();
-        }
-        return precioTotal + computadora.getCpu().getPrecioVenta();
-    }
-    public void comprobarPago(){
-
     }
 }
 
