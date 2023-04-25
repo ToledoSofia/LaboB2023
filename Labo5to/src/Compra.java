@@ -2,6 +2,7 @@ import componentes.CPU;
 import componentes.Componente;
 import componentes.Periferico;
 import personas.Cliente;
+import vehiculos.Coche;
 
 import java.util.ArrayList;
 
@@ -44,50 +45,73 @@ public class Compra {
     }
 
 
-    public void modificarPeriferico(Componente modificar, Componente nuevo){//periferico
-        for(Componente componente : componentes){
-            if(componente.equals(modificar)){
-                componentes.remove(componente);
-                componentes.add(nuevo);
+    public void modificarPeriferico(Periferico modificar, Periferico nuevo){
+        boolean fin  =false;
+        for(int i = 0; i<componentes.size() && !fin;i++){
+            if(componentes.get(i) instanceof Periferico){
+                if(componentes.get(i).equals(modificar)){
+                    componentes.remove(i);
+                    fin = true;
+                }
             }
         }
+        if(fin){
+            componentes.add(nuevo);
+        }
     }
-    public void agregarComponente(Componente nuevo){//periferico
+    public void agregarPeriferico(Periferico nuevo){//periferico
         componentes.add(nuevo);
     }
-    public void eliminarComponente(Componente eliminar){//periferico
+    public void eliminarPeriferico(Periferico eliminar){
         for(Componente componente : componentes){
             if(componente.equals(eliminar)){
                 componentes.remove(componente);
             }
         }
     }
-    public double calcularPrecio(){
+    public void calcularPrecio(){
         double precioTotal = 0, aumento;
         for(Componente componente:componentes){
             precioTotal += componente.getPrecioVenta();
         }
         if(metodoPago){//recargo del 5%
             aumento = 5*precioTotal/100;
-            return precioTotal+aumento;
+            precioTotal  = precioTotal+aumento;
         }else{
-            return precioTotal;
+            precioTotal = precioTotal;
         }
     }
+    public boolean comprobarComponentes(){
+        boolean cpu = false, entrada = false, salida = false;
+        for(Componente componente : componentes){
+            if(componente instanceof CPU){
+                cpu = true;
+            }else if(componente instanceof Periferico){
+                if(((Periferico) componente).isEntradaSalida()){
+                    entrada = true;
+                }else{
+                    salida = true;
+                }
+            }
+        }
+        if(cpu == false || entrada == false || salida == false){
+            return false;
+        }else{
+            return true;
+        }
+    }
+    public void mostrarCantidad(){
+        int contEntrada = 0, contSalida = 0;
+        for(Componente componente : componentes){
+            if(componente instanceof Periferico){
+                if(((Periferico) componente).isEntradaSalida()){
+                    contEntrada ++;
+                }else{
+                    contSalida ++;
+                }
+            }
+        }
+        System.out.println("cantidad de perifericos de entrada: " + contEntrada);
+        System.out.println("cantidad de perifericos de salida: " + contSalida);
+    }
 }
-
-//comprobarComponentes();
-//comprobarPago();
-//calcularPrecioTotal();
-// comprobar si tiene stock antes de guardar
-
-
-
-//La mínima compra tiene que darse con una CPU, un dispositivo de entrada y otro de salida.
-// Para crear la compra habrá que asegurarse que tenga esos componentes mínimos y se puede modificar la
-// configuración en cualquier momento añadiendo, quitando o cambiando exclusivamente periféricos.
-
-/*compra se quiere guardar el nombre, apellido y un celular del cliente así como
-también el método de pago. Si es en efectivo no hace falta pedir nada más y si es con tarjeta
- habrá que hacerle un recargo al precio final del 5% y guardar también el número de tarjeta,
- de qué banco es y si es crédito o débito.*/

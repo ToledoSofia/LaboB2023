@@ -29,27 +29,10 @@ public class PaginaComputadora {
     public void setVentas(ArrayList<Compra> ventas) {
         this.ventas = ventas;
     }
-    public boolean comprobarComponentes(Compra compra){
-        boolean cpu = false, entrada = false, salida = false;
-        for(Componente componente : compra.getComponentes()){
-            if(componente instanceof CPU){
-                cpu = true;
-            }else if(componente instanceof Periferico){
-                if(((Periferico) componente).isEntradaSalida()){
-                    entrada = true;
-                }else{
-                    salida = true;
-                }
-            }
-        }
-        if(cpu == false || entrada == false || salida == false){
-            return false;
-        }else{
-            return true;
-        }
-    }
+
     public void agregarVenta(Compra compra){
-        if(comprobarComponentes(compra)){
+        if(compra.comprobarComponentes()){
+            compra.calcularPrecio();
             ventas.add(compra);
         }else{
             System.out.println("----compra no valida-----");
@@ -60,16 +43,7 @@ public class PaginaComputadora {
     }
 
 }
-//agregarPerferico();
-//realizarCompra(); (modificar stock)
-
-/*Es importante aclarar que el sistema debe estar preparado para que se puedan ir agregando más periféricos
-
-El programa deberá:
-
-a. Realizar una compra, es decir, agregar una computadora a la lista de computadoras vendidas y hacer
-las modificaciones necesarias en cuanto a stock.
-
-b. Calcular el precio total de la computadora con todos los periféricos.
-
-c. Mostrar la cantidad de componentes de entrada y de salida que tiene una computadora en específico.*/
+//separar stock y componentes en comprobarCompra()
+//realizarCompra(cliente, componentes, metodoPago)
+//agregar, modificar y eliminar comp en pagina
+//mostrar cant entrada y salida por separado;
