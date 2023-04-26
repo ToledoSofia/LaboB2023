@@ -46,17 +46,27 @@ public class Empresa {
             }
         }
     }
+    public void agregarEmpleado(Empleado emp){
+        empleados.add(emp);
+    }
+    public void eliminarEmpleado(Empleado eliminar){
+        for(Empleado empleado : empleados){
+            if(empleado == eliminar){
+                empleados.remove(empleado);
+            }
+        }
+    }
     public void mostrarListado(Empleado empleado){
         for(Llamada llamada : llamadas){
             if(llamada.getOrigen() == empleado){
-                llamada.toString();
+                System.out.println(llamada.toString());
             }
         }
     }
     public void rankingEmpleados(){
         int duracion;
-        Empleado primero = empleados.get(0), segundo = new Empleado(), tercero = new Empleado();
-        int d1 = sumarLlamadas(empleados.get(0)), d2 = 0, d3 = 0;
+        Empleado primero = new Empleado(), segundo = new Empleado(), tercero = new Empleado();
+        int d1 = 0, d2 = 0, d3 = 0;
         for(Empleado empleado : empleados){
             duracion = sumarLlamadas(empleado);
             if(duracion >d1){
@@ -76,8 +86,8 @@ public class Empresa {
                 d3 = duracion;
             }
         }
-        System.out.println("Primero: " + primero.getTelefono() + "Duracion: " + d1);
-        System.out.println("Segundo: " + segundo.getTelefono() + "Duracion: " + d2);
-        System.out.println("Tercero: " + tercero.getTelefono() + "Duracion: " + d3);
+        System.out.println("Primero: " + primero.getTelefono() + " Duracion: " + d1);
+        System.out.println("Segundo: " + segundo.getTelefono() + " Duracion: " + d2);
+        System.out.println("Tercero: " + tercero.getTelefono() + " Duracion: " + d3);
     }
 }

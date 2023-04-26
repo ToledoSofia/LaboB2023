@@ -18,6 +18,7 @@ public class Llamada {
     public Llamada(Empleado origen, Empleado destino, int minutosDuracion) {
         this.origen = origen;
         this.destino = destino;
+        fecha = LocalDate.now();
         this.minutosDuracion = minutosDuracion;
     }
 
@@ -56,9 +57,9 @@ public class Llamada {
     @Override
     public String toString() {
         return "Llamada:\n" +
-                "origen=" + origen +
-                ", destino=" + destino +
-                ", fecha=" + fecha +
-                ", minutosDuracion=" + minutosDuracion;
+                "ORIGEN:" + origen.toString() +
+                ", \nDESTINO:" + destino.toString() +
+                ", \nFecha:" + fecha.toString() +
+                ", MinutosDuracion:" + minutosDuracion + "\n";
     }
 }
