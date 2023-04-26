@@ -46,15 +46,8 @@ public class Empresa {
             }
         }
     }
-    public void agregarEmpleado(Empleado emp){
+    public void agregarEmpleado(Empleado emp){//agrgarlo cuando llama
         empleados.add(emp);
-    }
-    public void eliminarEmpleado(Empleado eliminar){
-        for(Empleado empleado : empleados){
-            if(empleado == eliminar){
-                empleados.remove(empleado);
-            }
-        }
     }
     public void mostrarListado(Empleado empleado){
         for(Llamada llamada : llamadas){
