@@ -1,5 +1,5 @@
 import personas.Persona;
-import tiempo.Fecha;
+import tiempo1.Fecha;
 
 public class Main {
     public static void main(String[] args) {
@@ -37,7 +37,7 @@ public class Main {
         fecha1.menorQue(fecha2);
         fecha1.mayorQue(fecha2);
 
-        Libro libro1 =  new Libro("titulo",persona1, "123abc",1400,"Nova", fecha1);
+        Libro libro1 =  new Libro("titulo",persona1, "123abc",1400, Editorial.ALIANZA, fecha1);
         Libro libro2 = new Libro("titulo2", persona1, fecha2);
         libro1.mostrarInformacion();
         libro1.libroAnterior(libro2.getFecha());

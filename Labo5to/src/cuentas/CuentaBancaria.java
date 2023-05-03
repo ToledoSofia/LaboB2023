@@ -1,5 +1,4 @@
 package cuentas;
-
 import  personas.*;
 import pagos.*;
 public class CuentaBancaria {

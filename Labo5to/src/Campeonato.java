@@ -72,7 +72,7 @@ public class Campeonato {
     public void agregarEquipo(Equipo equipo){
         equipos.add(equipo);
     }
-
+/*
     public void armarPartidos(){
         Equipo e1 =  new Equipo(), e2 = new Equipo();
         Partido p1;
@@ -82,6 +82,17 @@ public class Campeonato {
                 e2 = equipos.get(j);
                 if (e1.getTurno().get(j) == e2.getTurno().get(j)) {
                     p1 = new Partido(e1, e2);
+                    partidos.add(p1);
+                }
+            }
+        }
+    }*/
+    public void armarPartidos(){
+        Partido p1;
+        for(Equipo equipo : equipos){
+            for(Equipo equipo2 : equipos){
+                if(equipo.getTurno().equals(equipo2.getTurno())){
+                    p1 = new Partido(equipo, equipo2, equipo2.getTurno(), equipo.compararDias(equipo2));
                     partidos.add(p1);
                 }
             }

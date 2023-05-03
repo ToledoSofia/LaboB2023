@@ -1,39 +1,20 @@
+import diasTurnos.*;
 public class Partido {
     private Equipo e1;
     private Equipo e2;
-    private String dia;
-    private String horario;
+    private Dia dia;
+    private Turno horario;
     public Partido(){
         e1 = new Equipo();
         e2 = new Equipo();
-        dia = "";
-        horario = "";
+        dia = Dia.SABADO;
+        horario = Turno.TARDE;
     }
-
-    public Partido (Equipo e1, Equipo e2){//falta 0
+    public Partido(Equipo e1, Equipo e2, Turno turno, Dia dia) {
         this.e1 = e1;
         this.e2 = e2;
-        int j = 0;
-        while(e1.getTurno().get(j) != e2.getTurno().get(j) && j<6){
-            j++;
-        }
-        if(e1.getTurno().get(j) == e2.getTurno().get(j)){
-            dia = palabrasDia(j+1);
-            if(e1.getTurno().get(j)==1){
-                horario = "mañana";
-            }else if (e1.getTurno().get(j) == 2){
-                horario = "tarde";
-            }else{
-                horario = "noche";
-            }
-        }
-    }
-
-    public Partido(Equipo e1, Equipo e2, String dia, String horario) {
-        this.e1 = e1;
-        this.e2 = e2;
+        this.horario = turno;
         this.dia = dia;
-        this.horario = horario;
     }
 
     public Equipo getE1() {
@@ -52,21 +33,22 @@ public class Partido {
         this.e2 = e2;
     }
 
-    public String getDia() {
+    public Dia getDia() {
         return dia;
     }
 
-    public void setDia(String dia) {
+    public void setDia(Dia dia) {
         this.dia = dia;
     }
 
-    public String getHorario() {
+    public Turno getHorario() {
         return horario;
     }
 
-    public void setHorario(String horario) {
+    public void setHorario(Turno horario) {
         this.horario = horario;
     }
+
     public String palabrasDia(int num){
         switch(num){
             case 1:

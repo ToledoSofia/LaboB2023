@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 public class Bufet {
     private ArrayList<Plato>platos;
+
     private ArrayList<Pedido>pedidos;
 
     public Bufet() {

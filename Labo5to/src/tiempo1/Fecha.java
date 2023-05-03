@@ -1,4 +1,4 @@
-package tiempo;
+package tiempo1;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -89,7 +89,7 @@ public class Fecha {
             case 9:
             case 11:
                 cantidadDias = 30;
-            break;
+                break;
             case 2:
                 if (anio % 4 == 0 && anio % 400 == 0 && anio % 100 != 0) {
                     cantidadDias = 29;
@@ -100,7 +100,7 @@ public class Fecha {
                 break;
             default:
                 cantidadDias = 31;
-            break;
+                break;
         }
         return cantidadDias;
     }
@@ -171,11 +171,11 @@ public class Fecha {
                 case 6:
                 case 9:
                 case 11:
-                   dia =30;
+                    dia =30;
                     break;
                 case 2:
                     if (anio % 4 == 0 && anio % 400 == 0 && anio % 100 != 0) {
-                      dia = 29;
+                        dia = 29;
                     }else{
                         dia = 28;
                     }

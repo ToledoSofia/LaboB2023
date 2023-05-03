@@ -1,14 +1,12 @@
 package personas;
-import tiempo.Fecha;
+import tiempo1.*;
 import java.util.Scanner;
 
 public class Jugador extends Persona {
-    //private String nombre;
     private Fecha fechaNacimiento;
     private int numCamiseta;
     public Jugador(){
         super();
-        //nombre = "";
         fechaNacimiento = new Fecha();
         numCamiseta = 1;
     }

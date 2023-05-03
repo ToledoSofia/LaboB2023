@@ -1,22 +1,22 @@
 import personas.Persona;
-import tiempo.Fecha;
+import tiempo1.Fecha;
 
 public class Libro {
     private String titulo;
     private Persona autor;
     private String ISBN;
     private int cantidadPaginas;
-    private String editorial;
+    private Editorial editorial;
     private Fecha fecha;
     public Libro(){
         titulo = "";
         autor = new Persona();
         ISBN = "";
         cantidadPaginas = 0;
-        editorial = "";
+        editorial = Editorial.ALIANZA;
         fecha =  new Fecha();
     }
-    public Libro (String titulo, Persona autor, String ISBN, int cantidadPaginas, String editorial, Fecha fecha){
+    public Libro (String titulo, Persona autor, String ISBN, int cantidadPaginas, Editorial editorial, Fecha fecha){
         this.titulo=titulo;
         this.autor=autor;
         this.ISBN = ISBN;
@@ -29,7 +29,7 @@ public class Libro {
         this.autor = autor;
         ISBN = "";
         cantidadPaginas = 0;
-        editorial = "";
+        editorial = Editorial.ALIANZA;
         this.fecha =  fecha;
     }
 
@@ -61,16 +61,16 @@ public class Libro {
         return cantidadPaginas;
     }
 
-    public void setCantidadPaginas(int cantidadPaginas) {
-        this.cantidadPaginas = cantidadPaginas;
-    }
-
-    public String getEditorial() {
+    public Editorial getEditorial() {
         return editorial;
     }
 
-    public void setEditorial(String editorial) {
+    public void setEditorial(Editorial editorial) {
         this.editorial = editorial;
+    }
+
+    public void setCantidadPaginas(int cantidadPaginas) {
+        this.cantidadPaginas = cantidadPaginas;
     }
 
     public Fecha getFecha() {

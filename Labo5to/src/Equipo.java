@@ -1,23 +1,26 @@
 import personas.Jugador;
+import diasTurnos.*;
 
 import java.util.ArrayList;
 
 public class Equipo {
     private String nombre;
     private String barrio;
-    private ArrayList<Integer>turno;//0
+    private Turno turno;
+    private ArrayList<Dia>dias;
     private ArrayList<Jugador>jugadores;
     private Jugador capitan;
     public Equipo(){
         nombre = "";
         barrio = "";
-        turno = new ArrayList<Integer>(6);
+        turno = Turno.TARDE;
         jugadores = new ArrayList<Jugador>(10);
         capitan = new Jugador();
     }
-    public Equipo(String nombre, ArrayList<Integer>turno, ArrayList<Jugador> jugadores) {
+    public Equipo(String nombre, Turno turno,ArrayList<Dia>dias, ArrayList<Jugador> jugadores) {
         this.nombre = nombre;
         this.turno = turno;
+        this.dias = dias;
         this.jugadores = jugadores;
         if(validarCamisetas()==true){
             jugadores = new ArrayList<Jugador>();
@@ -38,12 +41,20 @@ public class Equipo {
         this.capitan = capitan;
     }
 
-    public ArrayList<Integer> getTurno() {
+    public Turno getTurno() {
         return turno;
     }
 
-    public void setTurno(ArrayList<Integer> turno) {
+    public void setTurno(Turno turno) {
         this.turno = turno;
+    }
+
+    public ArrayList<Dia> getDias() {
+        return dias;
+    }
+
+    public void setDias(ArrayList<Dia> dias) {
+        this.dias = dias;
     }
 
     public String getNombre() {
@@ -113,6 +124,20 @@ public class Equipo {
                 System.out.println("---personas.Jugador eliminado---");
             }
         }
+    }
+    public Dia compararDias(Equipo e2){
+        boolean coinciden = false;
+        Dia diaJunto = Dia.SABADO;
+        for(Dia dia : dias){
+            if(e2.getDias().contains(dia)){
+                coinciden = true;
+                diaJunto = dia;
+            }
+        }
+        if(!coinciden){
+            System.out.println("---Los dias no coinciden, el partido se juega un sabado---");
+        }
+        return diaJunto;
     }
 
 }

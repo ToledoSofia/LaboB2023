@@ -1,45 +1,12 @@
+import diasTurnos.*;
 import personas.Jugador;
 
 import java.util.ArrayList;
 
 public class MainCampeonato {
     public static void main(String[] args) {
-        ArrayList<Integer>turno = new ArrayList<Integer>(6);
-        turno.add(1);
-        turno.add(2);
-        turno.add(3);
-        turno.add(1);
-        turno.add(1);
-        turno.add(2);
-        /*System.out.println("turno: ");
-        for(int i = 0; i<turno.size(); i++){
-            System.out.print(turno.get(i) + " - ");
-        }*/
-
-        ArrayList<Integer>turno2 = new ArrayList<Integer>(6);
-        turno2.add(2);
-        turno2.add(2);
-        turno2.add(3);
-        turno2.add(1);
-        turno2.add(1);
-        turno2.add(2);
-        /*System.out.println("turno2: ");
-        for(int i = 0; i<turno2.size(); i++){
-            System.out.print(turno2.get(i) + " - ");
-        }*/
+        
         ArrayList<Jugador>jugadores = new ArrayList<Jugador>(10);
-
-        ArrayList<Integer>turno3 = new ArrayList<Integer>(6);
-        turno3.add(3);
-        turno3.add(1);
-        turno3.add(3);
-        turno3.add(1);
-        turno3.add(1);
-        turno3.add(2);
-        /*System.out.println("turno3: ");
-        for(int i = 0; i<turno.size(); i++){
-            System.out.print(turno3.get(i) + " - ");
-        }*/
 
         jugadores.add(new Jugador("Natalia", 10));
         jugadores.add( new Jugador("Belen", 1));
@@ -52,9 +19,28 @@ public class MainCampeonato {
         jugadores.add(new Jugador("jugador9", 8));
         jugadores.add(new Jugador("Jugador10", 9));
 
-        Equipo e1 = new Equipo("eq1",turno,jugadores);
-        Equipo e2 = new Equipo("eq2",turno2,jugadores);
-        Equipo e3 = new Equipo("eq3",turno3,jugadores);
+        ArrayList<Dia>dias = new ArrayList<Dia>();
+        dias.add(Dia.LUNES);
+        dias.add(Dia.MARTES);
+        dias.add(Dia.MIERCOLES);
+        dias.add(Dia.JUEVES);
+
+        ArrayList<Dia>dias2 = new ArrayList<Dia>();
+        dias.add(Dia.LUNES);
+        dias.add(Dia.MARTES);
+        dias.add(Dia.JUEVES);
+        dias.add(Dia.VIERNES);
+
+
+        ArrayList<Dia>dias3 = new ArrayList<Dia>();
+        dias.add(Dia.MARTES);
+        dias.add(Dia.MIERCOLES);
+        dias.add(Dia.JUEVES);
+        dias.add(Dia.SABADO);
+
+        Equipo e1 = new Equipo("eq1", Turno.TARDE, dias,jugadores);
+        Equipo e2 = new Equipo("eq2",Turno.NOCHE,dias2,jugadores);
+        Equipo e3 = new Equipo("eq3",Turno.MANANA,dias3,jugadores);
 
         e1.eliminarJugador(8);
         e1.agregarJugador(new Jugador("lola", 24));
