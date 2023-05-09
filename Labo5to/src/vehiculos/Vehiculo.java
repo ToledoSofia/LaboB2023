@@ -1,27 +1,29 @@
 package vehiculos;
+import enums.*;
+
 
 public class Vehiculo {
     private String marca;
     private String modelo;
-    private String color;
+    private Color color;
     private int cantidadRuedas;
     private int anioFabricacion;
 
     public Vehiculo (){
         marca = "";
         modelo = "";
-        color = "";
+        color = Color.NEGRO;
         cantidadRuedas = 4;
         anioFabricacion = 2000;
     }
-    public Vehiculo(String marca, String modelo, String color){
+    public Vehiculo(String marca, String modelo, Color color){
         this.marca =  marca;
         this.modelo = modelo;
         this.color = color;
         cantidadRuedas = 4;
         anioFabricacion  = 2000;
     }
-    public Vehiculo(String marca, String modelo, String color, int cantidadRuedas, int anioFabricacion) {
+    public Vehiculo(String marca, String modelo, Color color, int cantidadRuedas, int anioFabricacion) {
         this.marca = marca;
         this.modelo = modelo;
         this.color = color;
@@ -45,11 +47,11 @@ public class Vehiculo {
         this.modelo = modelo;
     }
 
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(Color color) {
         this.color = color;
     }
 

@@ -1,25 +1,26 @@
 package productos;
 
+import enums.*;
 public class Televisor extends Multimedia{
-    private String tecnologia;
+    private Tecnologia tecnologia;
     private int resolucion;
     public Televisor(){
         super();
-        tecnologia = "4K";
+        tecnologia = Tecnologia.CUATROK;
         resolucion = 0;
     }
-
-    public Televisor(String tecnologia, int resolucion) {
+    
+    public Televisor(Tecnologia tecnologia, int resolucion) {
         super();
         this.tecnologia = tecnologia;
         this.resolucion = resolucion;
     }
 
-    public String getTecnologia() {
+    public Tecnologia getTecnologia() {
         return tecnologia;
     }
 
-    public void setTecnologia(String tecnologia) {
+    public void setTecnologia(Tecnologia tecnologia) {
         this.tecnologia = tecnologia;
     }
 
