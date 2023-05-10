@@ -1,5 +1,7 @@
 package vehiculos;
 
+import enums.Color;
+
 public class Coche extends Vehiculo{
     private int velocidad;
     private String patente;
@@ -10,11 +12,11 @@ public class Coche extends Vehiculo{
         patente = "";
         descapotable = false;
     }
-    public Coche(String marca, String modelo, String color, int velocidad){
+    public Coche(String marca, String modelo, Color color, int velocidad){
         super(marca,modelo,color);
         this.velocidad = velocidad;
     }
-    public Coche(String marca, String modelo, String color, int velocidad, String patente){
+    public Coche(String marca, String modelo, Color color, int velocidad, String patente){
         super(marca,modelo,color);
         this.velocidad = velocidad;
         this.patente = patente;
