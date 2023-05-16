@@ -1,5 +1,6 @@
 import java.util.*;
 public class MainComplejidad {
+
     public static void main(String[] args) {
         //1)
         //ult1) 4
@@ -7,11 +8,11 @@ public class MainComplejidad {
         //ult3) 4n+4
         /*
         2)
-        1_ O(1)
-        2_ O(1)
-        3_ O(n)
-        4_ O(n)
-        5_ O(n)
+        f1_ O(3+ 13/2n) = O(n)
+        f2_ O(10000) = O(1)
+        f3_ O(n)
+        f4_ O(1000) = O(1)
+        f5_ O(n+r)
         */
         /*
         3)
@@ -63,7 +64,7 @@ public class MainComplejidad {
 
         System.out.println(maxMeseta);
         /*
-        4) 9n + 9
+        4) 700(10n+1)+2 = 7000n+702
         5) 5n + 3
          */
         //6)
@@ -82,5 +83,7 @@ public class MainComplejidad {
             cont++;
         }
         System.out.println("max impares: " + maxCantidad);
+        //9)
+
     }
 }
