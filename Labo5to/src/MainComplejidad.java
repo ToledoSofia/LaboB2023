@@ -65,7 +65,8 @@ public class MainComplejidad {
         System.out.println(maxMeseta);
         /*
         4) 700(10n+1)+2 = 7000n+702
-        5) 5n + 3
+        5) 5n + 3 NO
+        5) 2+log2(n) --> O(log2(n))
          */
         //6)
         int imparesConsec = 0;
@@ -83,7 +84,48 @@ public class MainComplejidad {
             cont++;
         }
         System.out.println("max impares: " + maxCantidad);
-        //9)
+        //10)
+        ArrayList<Integer>v1 = new ArrayList<>();
+        ArrayList<Integer>v2 = new ArrayList<>();
+        ArrayList<Integer>v3 = new ArrayList<>();
+        v1.add(1); v1.add(2); v1.add(3); v1.add(4);
+        v2.add(2); v2.add(4); v2.add(8); v2.add(200);
+        v3.add(9); v3.add(11); v3.add(7); v3.add(2);
+        int posicion1 = 0, posicion2 = 0, posicion3 = 0;
+        for(int i2 = 0; i2<v1.size(); i2++){
+            if(v2.contains(v1.get(i2)) && v3.contains(v1.get(i2))){
+                posicion1 = i2;
+            }
+        }
+        for(int p2 = 0; p2<v2.size(); p2++){
+            if(v2.get(p2) == v1.get(posicion1)){
+                posicion2 = p2;
+            }
+        }
+        for(int p3 = 0; p3<v3.size(); p3++){
+            if(v3.get(p3) == v1.get(posicion1)){
+                posicion3 = p3;
+            }
+        }
+        System.out.println("posiciones: [" + posicion1 + ", " + posicion2 + ", " + posicion3 + "] " );
 
+        //11)
+        ArrayList<Integer>unoTres = new ArrayList<Integer>();
+        ArrayList<Integer>unoTresOrdenado = new ArrayList<Integer>();
+
+        unoTres.add(1); unoTres.add(2); unoTres.add(1); unoTres.add(1);
+        unoTres.add(3); unoTres.add(3);
+        for(int num = 1; num<4; num++){
+            for(int num2 = 0; num2<unoTres.size(); num2++){
+                if(unoTres.get(num2) == num){
+                    unoTresOrdenado.add(num);
+                }
+            }
+        }
+        // fuera de la funcion
+        System.out.print("Del uno al tres ordenado: ");
+        for(int num = 0; num<unoTresOrdenado.size(); num++){
+            System.out.print(unoTresOrdenado.get(num) + "  ");
+        }
     }
 }

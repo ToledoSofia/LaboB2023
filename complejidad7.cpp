@@ -6,32 +6,28 @@ void mostrarVector(vector<int>v){
         cout<<v[i]<<endl;
     }
 }
-vector<bool> compararFilas(bool m1[5][4]){
-    int fila = 0 ;
-    bool repite = true;
-    int i = 0, j = 0, col;
-    while(j<4){//columna
-        col = j+1;
-        if(m1[i][j]==m1[i][col]){
-            i++;
-        }else{
-            col++;
-            i = 0;
-            if(j==3 && i < 5){
-                fila = i;
-            }
-            if(i==5){
-                i = 0;
+void mostrarFilaDiferente(bool m1[5][4]){
+    int cont1, cont0;
+    for(int i = 0; i<4; i++){//columnas
+        cont1 = 0; cont0 = 0;
+        for(int j = 0; j<5; j++){//filas
+            if(m1[j][i] == true){
+                cont1++;
+            }else{
+                cont0++;
             }
         }
-        j++;
+        if(cont1%2!=0){
+            cout<< " 1 ";
+        }else{
+            cout<< " 0 ";
+        }  
     }
-    ;
 }
 
 int main(){
     int i = 0;
     bool m1[5][4]={{1,0,0,1},{1,0,0,1},{1,1,0,1},{1,1,0,0},{1,1,0,1}};
-    
-    
+    mostrarFilaDiferente(m1); 
+    cout<<endl;
 }
