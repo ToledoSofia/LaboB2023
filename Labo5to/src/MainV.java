@@ -1,5 +1,6 @@
 import personas.*;
-import vehiculos.*;
+import platos.Plato;
+
 public class MainV {
     public static void main(String[] args) {
         /*

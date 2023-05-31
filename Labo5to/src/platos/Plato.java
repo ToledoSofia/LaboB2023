@@ -1,3 +1,5 @@
+package platos;
+
 public class Plato {
     private String nombre;
     private double precio;
@@ -34,7 +36,7 @@ public class Plato {
 
     @Override
     public String toString() {
-        return "----------\nPlato:\n" +
+        return "----------\nplatos.Plato:\n" +
                 "nombre:" + nombre + '\n' +
                 "precio: $" + precio + "\n";
     }

@@ -16,11 +16,17 @@ public class EmpleadoAsist extends Persona{
         asistencias = new HashSet<>();
     }
 
-    public EmpleadoAsist(HashSet<Dia> dias) {
-        super();
+    public EmpleadoAsist(String nombre, HashSet<Dia> dias) {
+        super(nombre);
         fechaNacimiento = LocalDateTime.now();
         this.dias = dias;
         asistencias = new HashSet<>();
+    }
+    public EmpleadoAsist(String nombre, HashSet<Dia> dias, HashSet<LocalDateTime>asistencias) {
+        super(nombre);
+        fechaNacimiento = LocalDateTime.now();
+        this.dias = dias;
+        this.asistencias = asistencias;
     }
 
     public HashSet<LocalDateTime> getAsistencias() {
@@ -53,6 +59,9 @@ public class EmpleadoAsist extends Persona{
 
     public void setDias(HashSet<Dia> dias) {
         this.dias = dias;
+    }
+    public void agregarAsistencia(){
+        asistencias.add(LocalDateTime.now());
     }
     public double porcentajeMes(int mes){
         int cont = 0;

@@ -1,4 +1,4 @@
-import tiempo1.Fecha;
+import platos.Plato;
 import personas.*;
 import java.time.*;
 public class Pedido {
@@ -69,7 +69,7 @@ public class Pedido {
     public void setEntregado(boolean entregado) {
         this.entregado = entregado;
     }
-    /*public void modificarPedido(Plato plato, Persona persona, boolean entregado){//bufet
+    /*public void modificarPedido(platos.Plato plato, Persona persona, boolean entregado){//bufet
         this.plato = plato;
         this.persona = persona;
         this.entregado = entregado;

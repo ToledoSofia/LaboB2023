@@ -1,4 +1,4 @@
-import personas.Profesor;
+import platos.Plato;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
