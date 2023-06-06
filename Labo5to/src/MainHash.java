@@ -1,5 +1,7 @@
 import diasTurnos.Dia;
 import personas.EmpleadoAsist;
+import personas.PersonaCaloria;
+import platos.PlatoCaloria;
 
 import java.util.*;
 public class MainHash {
@@ -52,6 +54,34 @@ public class MainHash {
         reg1.diferenciarAnios(2018,2020);
 
         //3)
-        //probar 3
+        PlatoCaloria p1 = new PlatoCaloria("plato1", 50);
+        PlatoCaloria p2 = new PlatoCaloria("plato2", 100);
+        PlatoCaloria p3 = new PlatoCaloria("plato3", 20);
+        PlatoCaloria p4 = new PlatoCaloria("plato4", 200);
+
+        PersonaCaloria per1 = new PersonaCaloria("per1");//300
+        per1.comerPlato(p4);
+        per1.comerPlato(p2);
+
+
+        PersonaCaloria per2 = new PersonaCaloria("per2");//70
+        per2.comerPlato(p3);
+        per2.comerPlato(p1);
+
+
+        PersonaCaloria per3 = new PersonaCaloria("per3");//12
+        per3.comerPlato(p3);
+        per3.comerPlato(p2);
+
+        System.out.println("per1: " + per1.calcularCaloriasTotales());
+        System.out.println("per2: " + per2.calcularCaloriasTotales());
+
+        Familia familia = new Familia();
+        familia.agregarPersona(per1);
+        familia.agregarPersona(per2);
+        familia.agregarPersona(per3);
+        System.out.println("prom familia: " + familia.promedioCalorias());
+        System.out.println("mayor cant: " + familia.mayorCantidadCalorias());
+        System.out.println("menor cant: " + familia.menorCantidadCalorias());
     }
 }

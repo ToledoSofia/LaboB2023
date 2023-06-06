@@ -9,6 +9,11 @@ public class PlatoCaloria {
         calorias = 50;
     }
 
+    public PlatoCaloria(String nombre, double calorias) {
+        this.nombre = nombre;
+        this.calorias = calorias;
+    }
+
     public PlatoCaloria(double calorias) {
         this.calorias = calorias;
     }

@@ -1,35 +1,36 @@
 import llamadas.Llamada;
 import personas.Empleado;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class Empresa {
-    private ArrayList<Empleado>empleados;
-    private ArrayList<Llamada>llamadas;
-    public Empresa(){
-        empleados = new ArrayList<Empleado>();
-        llamadas = new ArrayList<Llamada>();
+    private HashSet<Empleado>empleados;
+    private HashSet<Llamada>llamadas;
+    public Empresa(){//hashmap empleado, llamadas
+        empleados = new HashSet<Empleado>();
+        llamadas = new HashSet<Llamada>();
     }
-    public Empresa(ArrayList<Llamada>llamadas) {
+    public Empresa(HashSet<Llamada>llamadas) {
         this.llamadas = llamadas;
-        empleados = new ArrayList<Empleado>();
+        empleados = new HashSet<Empleado>();
     }
 
-    public ArrayList<Empleado> getEmpleados() {
+    public HashSet<Empleado> getEmpleados() {
         return empleados;
     }
 
-    public void setEmpleados(ArrayList<Empleado> empleados) {
+    public void setEmpleados(HashSet<Empleado> empleados) {
         this.empleados = empleados;
     }
 
-    public ArrayList<Llamada> getLlamadas() {
+    public HashSet<Llamada> getLlamadas() {
         return llamadas;
     }
 
-    public void setLlamadas(ArrayList<Llamada> llamadas) {
+    public void setLlamadas(HashSet<Llamada> llamadas) {
         this.llamadas = llamadas;
     }
+
     public int sumarLlamadas(Empleado empleado){
         int duracionTotal = 0;
         for(Llamada llamada : llamadas){

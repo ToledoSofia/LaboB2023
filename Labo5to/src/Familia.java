@@ -21,6 +21,9 @@ public class Familia {
     public void setPersonas(HashSet<PersonaCaloria> personas) {
         this.personas = personas;
     }
+    public void agregarPersona(PersonaCaloria p1){
+        personas.add(p1);
+    }
     public double promedioCalorias(){
         double total = 0;
         for(PersonaCaloria p : personas){

@@ -1,13 +1,14 @@
-import java.util.Date;
-import java.util.*;
-public class RegistroPeso {
-    private HashMap<Date,ArrayList<Double>>pesoAltura;
+import personas.Persona;
 
+import java.util.*;
+public class RegistroPeso extends Persona {
+    private HashMap<Date,ArrayList<Double>>pesoAltura;
     public RegistroPeso() {
+        super();
         pesoAltura = new HashMap<Date, ArrayList<Double>>();
     }
-
     public RegistroPeso(HashMap<Date, ArrayList<Double>> pesoAltura) {
+        super();
         this.pesoAltura = pesoAltura;
     }
 
@@ -25,13 +26,14 @@ public class RegistroPeso {
     }
     public void mostrarPesoAltura(Date fecha){
         if(pesoAltura.containsKey(fecha)){
-            System.out.println("Peso: " + pesoAltura.get(fecha).get(0) + " Altura: " + pesoAltura.get(fecha).get(1));
+            System.out.println("Peso: " + pesoAltura.get(fecha).get(0) +
+                    " Altura: " + pesoAltura.get(fecha).get(1));
         }
     }
     public ArrayList<Double> promedioAnio(int anio){
         double total = 0, sumaPeso = 0, sumaAltura = 0;
         ArrayList<Double>promedios = new ArrayList<Double>();
-        for(Date fecha : pesoAltura.keySet()){
+        for(Date fecha : pesoAltura.keySet()){//Map.Entry...
             if(fecha.getYear() == anio){
                 total++;
                 sumaPeso += pesoAltura.get(fecha).get(0);
@@ -46,7 +48,7 @@ public class RegistroPeso {
         return promedios;
     }
 
-    public void diferenciarAnios(int y1, int y2){
+    public void diferenciarAnios(int y1, int y2){//altura max no promedio
         ArrayList<Double>prom1 = promedioAnio(y1);
         ArrayList<Double>prom2 = promedioAnio(y2);
         System.out.println("Diferencia Peso: " + (prom2.get(0)-prom1.get(0)));
