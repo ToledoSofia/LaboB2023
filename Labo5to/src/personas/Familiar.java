@@ -2,25 +2,24 @@ package personas;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.HashSet;
 
 import platos.*;
-public class PersonaCaloria extends Persona{
+public class Familiar extends Persona{
     private LocalDate fechaNacimiento;
     private ArrayList<PlatoCaloria> platos;
-    public PersonaCaloria(){
+    public Familiar(){
         super();
         fechaNacimiento = LocalDate.now();
         platos = new ArrayList<PlatoCaloria>();
     }
 
-    public PersonaCaloria(String nombre) {
+    public Familiar(String nombre) {
         super(nombre);
         fechaNacimiento = LocalDate.now();
         platos = new ArrayList<PlatoCaloria>();
     }
 
-    public PersonaCaloria(LocalDate fechaNacimiento) {
+    public Familiar(LocalDate fechaNacimiento) {
         super();
         this.fechaNacimiento = fechaNacimiento;
         platos = new ArrayList<PlatoCaloria>();

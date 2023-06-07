@@ -28,4 +28,18 @@ public class Ciudad extends Lugar{
         }
         return poblacion;
     }
+    public void agregarBarrio(Barrio b1){
+        barrios.add(b1);
+    }
+    public void eliminarBarrio(Barrio b1){
+        if(barrios.contains(b1)){
+            barrios.remove(b1);
+        }
+    }
+    public void modificarBarrio(Barrio modificar, Barrio nuevo){
+        if(barrios.contains(modificar)){
+            barrios.remove(modificar);
+            barrios.add(nuevo);
+        }
+    }
 }

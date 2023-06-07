@@ -28,4 +28,18 @@ public class Provincia extends Lugar{
         }
         return poblacion;
     }
+    public void agregarCiudad(Ciudad c1){
+        ciudades.add(c1);
+    }
+    public void eliminarCiudad(Ciudad c1){
+        if(ciudades.contains(c1)){
+            ciudades.remove(c1);
+        }
+    }
+    public void modificarCiudad(Ciudad modificar, Ciudad nuevo){
+        if(ciudades.contains(modificar)){
+            ciudades.remove(modificar);
+            ciudades.add(nuevo);
+        }
+    }
 }

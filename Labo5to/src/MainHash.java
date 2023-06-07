@@ -1,6 +1,6 @@
 import diasTurnos.Dia;
 import personas.EmpleadoAsist;
-import personas.PersonaCaloria;
+import personas.Familiar;
 import platos.PlatoCaloria;
 
 import java.util.*;
@@ -59,17 +59,17 @@ public class MainHash {
         PlatoCaloria p3 = new PlatoCaloria("plato3", 20);
         PlatoCaloria p4 = new PlatoCaloria("plato4", 200);
 
-        PersonaCaloria per1 = new PersonaCaloria("per1");//300
+        Familiar per1 = new Familiar("per1");//300
         per1.comerPlato(p4);
         per1.comerPlato(p2);
 
 
-        PersonaCaloria per2 = new PersonaCaloria("per2");//70
+        Familiar per2 = new Familiar("per2");//70
         per2.comerPlato(p3);
         per2.comerPlato(p1);
 
 
-        PersonaCaloria per3 = new PersonaCaloria("per3");//12
+        Familiar per3 = new Familiar("per3");//12
         per3.comerPlato(p3);
         per3.comerPlato(p2);
 

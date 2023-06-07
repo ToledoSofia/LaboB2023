@@ -1,40 +1,39 @@
-import personas.Persona;
-import personas.PersonaCaloria;
+import personas.Familiar;
 
 import java.util.HashSet;
 
 public class Familia {
-    HashSet<PersonaCaloria>personas;
+    HashSet<Familiar>personas;
 
     public Familia() {
-        personas = new HashSet<PersonaCaloria>();
+        personas = new HashSet<Familiar>();
     }
 
-    public Familia(HashSet<PersonaCaloria> personas) {
+    public Familia(HashSet<Familiar> personas) {
         this.personas = personas;
     }
 
-    public HashSet<PersonaCaloria> getPersonas() {
+    public HashSet<Familiar> getPersonas() {
         return personas;
     }
 
-    public void setPersonas(HashSet<PersonaCaloria> personas) {
+    public void setPersonas(HashSet<Familiar> personas) {
         this.personas = personas;
     }
-    public void agregarPersona(PersonaCaloria p1){
+    public void agregarPersona(Familiar p1){
         personas.add(p1);
     }
     public double promedioCalorias(){
         double total = 0;
-        for(PersonaCaloria p : personas){
+        for(Familiar p : personas){
             total += p.calcularCaloriasTotales();
         }
         return total/personas.size();
     }
-    public PersonaCaloria mayorCantidadCalorias(){
+    public Familiar mayorCantidadCalorias(){
         double mayor = 0;
-        PersonaCaloria p1 = new PersonaCaloria();
-        for(PersonaCaloria persona : personas){
+        Familiar p1 = new Familiar();
+        for(Familiar persona : personas){
             if(persona.calcularCaloriasTotales()>mayor){
                 mayor = persona.calcularCaloriasTotales();
                 p1 = persona;
@@ -43,10 +42,10 @@ public class Familia {
         return p1;
     }
 
-    public PersonaCaloria menorCantidadCalorias(){
+    public Familiar menorCantidadCalorias(){
         double menor = 0; int inicio = 0;
-        PersonaCaloria p1 = new PersonaCaloria();
-        for(PersonaCaloria persona : personas){
+        Familiar p1 = new Familiar();
+        for(Familiar persona : personas){
             if(inicio == 0 || persona.calcularCaloriasTotales()<menor){
                 menor = persona.calcularCaloriasTotales();
                 p1 = persona;

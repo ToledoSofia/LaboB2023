@@ -28,5 +28,18 @@ public class Continente extends Lugar{
         }
         return poblacion;
     }
-    //ABM paises, calcularPoblacion()
+    public void agregarPais(Pais p1){
+        paises.add(p1);
+    }
+    public void eliminarPais(Pais p1){
+        if(paises.contains(p1)){
+            paises.remove(p1);
+        }
+    }
+    public void modificarPais(Pais modificar, Pais nuevo){
+        if(paises.contains(modificar)){
+            paises.remove(modificar);
+            paises.add(nuevo);
+        }
+    }
 }
