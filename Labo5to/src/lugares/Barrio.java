@@ -25,6 +25,7 @@ public class Barrio extends Lugar{
     public void setPoblacion(int poblacion) {
         this.poblacion = poblacion;
     }
+    @Override
     public int calcularPoblacion(){
         return poblacion;
     }

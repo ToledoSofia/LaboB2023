@@ -21,6 +21,7 @@ public class Continente extends Lugar{
     public void setPaises(HashSet<Pais> paises) {
         this.paises = paises;
     }
+    @Override
     public int calcularPoblacion(){
         int poblacion = 0;
         for(Pais pais : paises){
@@ -42,4 +43,5 @@ public class Continente extends Lugar{
             paises.add(nuevo);
         }
     }
+
 }

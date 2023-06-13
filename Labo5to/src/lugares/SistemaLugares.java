@@ -20,6 +20,20 @@ public class SistemaLugares {
         this.lugares = lugares;
     }
 
+    public void calcularPoblacion(int codigo){
+        int poblacion = 0;
+        for(Lugar l1 : lugares){
+            if(l1.getCodigo() == codigo){
+                poblacion = l1.calcularPoblacion();
+            }
+        }
+        if(poblacion == 0){
+            System.out.println("---No existe un lugar con ese codigo---");
+        }else{
+            System.out.println("poblacion: " + poblacion);
+        }
+    }
+
     public void agregarLugar(Lugar l1){
        lugares.add(l1);
     }

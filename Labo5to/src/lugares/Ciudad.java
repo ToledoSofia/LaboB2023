@@ -21,6 +21,7 @@ public class Ciudad extends Lugar{
     public void setBarrios(HashSet<Barrio> barrios) {
         this.barrios = barrios;
     }
+    @Override
     public int calcularPoblacion(){
         int poblacion = 0;
         for(Barrio barrio : barrios){

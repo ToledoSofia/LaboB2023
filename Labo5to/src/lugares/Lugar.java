@@ -44,7 +44,15 @@ public class Lugar {
     public void setCoordenadas(ArrayList<String> coordenadas) {
         this.coordenadas = coordenadas;
     }
+    public int calcularPoblacion(){
+        return 1;
+    }
 
+    @Override
+    public String toString() {
+        return  "nombre='" + nombre + '\'' +
+                ", codigo=" + codigo;
+    }
 }
 //for(Masp.Entry<clave, valor> entrada: nombreHashmap.entrySet())
 //entrada.getKey();

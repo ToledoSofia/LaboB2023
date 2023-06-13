@@ -21,6 +21,7 @@ public class Provincia extends Lugar{
     public void setCiudades(HashSet<Ciudad> ciudades) {
         this.ciudades = ciudades;
     }
+    @Override
     public int calcularPoblacion(){
         int poblacion = 0;
         for(Ciudad ciudad : ciudades){
