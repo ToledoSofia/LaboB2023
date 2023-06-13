@@ -98,23 +98,13 @@ public class SistemaLugares {
     public Pais paisMenorPoblacion(){
         int menor = -2;
         Pais pMenor = new Pais();
-        if(menor < 0){
-            for(Lugar l : lugares){
-                if(l instanceof Pais){
-                    pMenor = ((Pais) l);
-                    menor = pMenor.calcularPoblacion();
-                }
-            }
-        }else{
-            for(Lugar l : lugares){
-                if(l instanceof Pais && ((Pais) l).calcularPoblacion()<menor){
-                    pMenor = ((Pais) l);
-                    menor = pMenor.calcularPoblacion();
-                }
+        for(Lugar l : lugares){
+            if(l instanceof Pais && ((Pais) l).calcularPoblacion()<menor || l instanceof Pais && menor<0){
+                pMenor = ((Pais) l);
+                menor = pMenor.calcularPoblacion();
             }
         }
         return pMenor;
-
     }
     public Continente continenteMasPoblado(){
         int mayor = 0;
@@ -130,19 +120,10 @@ public class SistemaLugares {
     public Continente continenteMenosPoblado(){
         int menor = -2;
         Continente cMenor = new Continente();
-        if(menor < 0){
-            for(Lugar l : lugares){
-                if(l instanceof Continente){
-                    cMenor = ((Continente) l);
-                    menor = cMenor.calcularPoblacion();
-                }
-            }
-        }else{
-            for(Lugar l : lugares){
-                if(l instanceof Continente && ((Continente) l).calcularPoblacion()<menor){
-                    cMenor = ((Continente) l);
-                    menor = cMenor.calcularPoblacion();
-                }
+        for(Lugar l : lugares){
+            if(l instanceof Continente && ((Continente) l).calcularPoblacion()<menor || l instanceof Continente && menor<0){
+                cMenor = ((Continente) l);
+                menor = cMenor.calcularPoblacion();
             }
         }
         return cMenor;

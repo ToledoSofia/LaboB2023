@@ -1,19 +1,20 @@
 package lugares;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class Lugar {
     private String nombre;
     private int codigo;
-    private ArrayList<String>coordenadas;
+    private HashSet<Coordenadas> coordenadas;
 
     public Lugar(){
-        coordenadas = new ArrayList<String>();
+        coordenadas = new HashSet<Coordenadas>();
     }
 
     public Lugar(String nombre) {
         this.nombre = nombre;
-        coordenadas = new ArrayList<String>();
+        coordenadas = new HashSet<Coordenadas>();
     }
 
     public Lugar(String nombre, int codigo) {
@@ -37,13 +38,14 @@ public class Lugar {
         this.codigo = codigo;
     }
 
-    public ArrayList<String> getCoordenadas() {
+    public HashSet<Coordenadas> getCoordenadas() {
         return coordenadas;
     }
 
-    public void setCoordenadas(ArrayList<String> coordenadas) {
+    public void setCoordenadas(HashSet<Coordenadas> coordenadas) {
         this.coordenadas = coordenadas;
     }
+
     public int calcularPoblacion(){
         return 1;
     }
