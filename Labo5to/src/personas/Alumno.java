@@ -54,8 +54,10 @@ public class Alumno extends Persona {
     }
 
     @Override
-    public void mostrarDatos() {
-        super.mostrarDatos();
+    public void mostrarDatos()  {
+        System.out.println("Nombre: " + this.getNombre());
+        System.out.println("Edad: " + this.getEdad());
+        System.out.println("Direccion: " + this.getDireccion());
     }
 
     public void agregarMateria(Materia m1){

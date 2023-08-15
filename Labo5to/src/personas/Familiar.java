@@ -51,5 +51,11 @@ public class Familiar extends Persona{
         }
         return cal;
     }
+    @Override
+    public void mostrarDatos()  {
+        System.out.println("Nombre: " + this.getNombre());
+        System.out.println("Edad: " + this.getEdad());
+        System.out.println("Direccion: " + this.getDireccion());
+    }
 
 }

@@ -1,22 +1,23 @@
+import personas.Autor;
 import personas.Persona;
 import tiempo1.Fecha;
 
 public class Libro {
     private String titulo;
-    private Persona autor;
+    private Autor autor;
     private String ISBN;
     private int cantidadPaginas;
     private Editorial editorial;
     private Fecha fecha;
     public Libro(){
         titulo = "";
-        autor = new Persona();
+        autor = new Autor();
         ISBN = "";
         cantidadPaginas = 0;
         editorial = Editorial.ALIANZA;
         fecha =  new Fecha();
     }
-    public Libro (String titulo, Persona autor, String ISBN, int cantidadPaginas, Editorial editorial, Fecha fecha){
+    public Libro (String titulo, Autor autor, String ISBN, int cantidadPaginas, Editorial editorial, Fecha fecha){
         this.titulo=titulo;
         this.autor=autor;
         this.ISBN = ISBN;
@@ -24,7 +25,7 @@ public class Libro {
         this.editorial=editorial;
         this.fecha = fecha;
     }
-    public Libro(String titulo, Persona autor, Fecha fecha){
+    public Libro(String titulo, Autor autor, Fecha fecha){
         this.titulo = titulo;
         this.autor = autor;
         ISBN = "";
@@ -37,7 +38,7 @@ public class Libro {
         return autor;
     }
 
-    public void setAutor(Persona autor) {
+    public void setAutor(Autor autor) {
         this.autor = autor;
     }
 

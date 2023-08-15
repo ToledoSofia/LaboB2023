@@ -20,10 +20,10 @@ public class Main {
         coche1.frenar(2);
         coche1.mostrarVelocidadActual();*/
 
-        Persona persona1 = new Persona("Sofia", 17, "Argerich 1234");
+        /*Persona persona1 = new Persona("Sofia", 17, "Argerich 1234");
         Persona persona2 = new Persona();
         persona1.mostrarDatos();
-        persona2.mostrarDatos();
+        persona2.mostrarDatos();*/
 
         Fecha fecha1 = new Fecha(1,1,2000);
         fecha1.larga();
@@ -37,10 +37,10 @@ public class Main {
         fecha1.menorQue(fecha2);
         fecha1.mayorQue(fecha2);
 
-        Libro libro1 =  new Libro("titulo",persona1, "123abc",1400, Editorial.ALIANZA, fecha1);
-        Libro libro2 = new Libro("titulo2", persona1, fecha2);
-        libro1.mostrarInformacion();
-        libro1.libroAnterior(libro2.getFecha());
+        //Libro libro1 =  new Libro("titulo",persona1, "123abc",1400, Editorial.ALIANZA, fecha1);
+        //Libro libro2 = new Libro("titulo2", persona1, fecha2);
+        //libro1.mostrarInformacion();
+        //libro1.libroAnterior(libro2.getFecha());
 
         Cafetera cafetera1 = new Cafetera();
         cafetera1.llenarCafetera();
@@ -52,7 +52,7 @@ public class Main {
         cafetera1.servirTaza(20);
         System.out.println("taza20: " + cafetera1.getCantActual());
 
-        Cancion cancion1 = new Cancion("titulo",persona1);
-        cancion1.mostrarDatos();
+       /* Cancion cancion1 = new Cancion("titulo",persona1);
+        cancion1.mostrarDatos();*/
     }
 }

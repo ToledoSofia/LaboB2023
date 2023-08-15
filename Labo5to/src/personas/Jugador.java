@@ -37,8 +37,10 @@ public class Jugador extends Persona {
         this.numCamiseta = numCamiseta;
     }
 
-    @Override
-    public void mostrarDatos() {
-        super.mostrarDatos();
+   @Override
+    public void mostrarDatos()  {
+        System.out.println("Nombre: " + this.getNombre());
+        System.out.println("Edad: " + this.getEdad());
+        System.out.println("Direccion: " + this.getDireccion());
     }
 }

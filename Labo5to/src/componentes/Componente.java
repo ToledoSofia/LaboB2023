@@ -1,6 +1,6 @@
 package componentes;
 
-public class Componente {
+public abstract class Componente {
     private String fabricante;
     private String modelo;
     private double precioVenta;

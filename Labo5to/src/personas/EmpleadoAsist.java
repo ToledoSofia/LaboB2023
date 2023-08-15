@@ -72,4 +72,10 @@ public class EmpleadoAsist extends Persona{
         }
         return cont*100/(dias.size()*4);
     }
+    @Override
+    public void mostrarDatos()  {
+        System.out.println("Nombre: " + this.getNombre());
+        System.out.println("Edad: " + this.getEdad());
+        System.out.println("Direccion: " + this.getDireccion());
+    }
 }

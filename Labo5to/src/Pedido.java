@@ -10,7 +10,7 @@ public class Pedido {
     public Pedido(){
         fechaCreacion = LocalDate.now();
         plato = new Plato();
-        persona = new Persona();
+        persona = new Cliente();
         horaEntrega = LocalTime.now();
         entregado = false;
     }
@@ -84,5 +84,4 @@ public class Pedido {
             return plato.getPrecio();
         }
     }
-
 }

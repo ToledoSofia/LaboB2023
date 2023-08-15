@@ -27,6 +27,12 @@ public class ClienteBanco extends Persona{
     }
 
     @Override
+    public void mostrarDatos()  {
+        System.out.println("Nombre: " + this.getNombre());
+        System.out.println("Edad: " + this.getEdad());
+        System.out.println("Direccion: " + this.getDireccion());
+    }
+    @Override
     public String toString() {
         return "ClienteBanco{" +
                 "cuil=" + cuil +

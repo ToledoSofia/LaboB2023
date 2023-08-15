@@ -1,6 +1,6 @@
 package dispositivos;
 
-public class DispositivoAlarma {
+public abstract class DispositivoAlarma {
     private boolean conectado;
     private double valorUmbral;
     private double medida;

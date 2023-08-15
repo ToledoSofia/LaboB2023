@@ -1,3 +1,4 @@
+import personas.Autor;
 import personas.Persona;
 
 public class Cancion {
@@ -5,7 +6,7 @@ public class Cancion {
     private Persona autor;
     public Cancion(){
         titulo = "";
-        autor = new Persona();
+        autor = new Autor();
     }
     public Cancion(String titulo, Persona autor){
         this.titulo = titulo;

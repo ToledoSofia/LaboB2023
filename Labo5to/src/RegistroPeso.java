@@ -24,6 +24,12 @@ public class RegistroPeso extends Persona {
         pesoAlt.add(peso); pesoAlt.add(altura);
         pesoAltura.put(fecha, pesoAlt);
     }
+    @Override
+    public void mostrarDatos()  {
+        System.out.println("Nombre: " + this.getNombre());
+        System.out.println("Edad: " + this.getEdad());
+        System.out.println("Direccion: " + this.getDireccion());
+    }
     public void mostrarPesoAltura(Date fecha){
         if(pesoAltura.containsKey(fecha)){
             System.out.println("Peso: " + pesoAltura.get(fecha).get(0) +

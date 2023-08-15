@@ -1,6 +1,6 @@
 package figuras;
 
-public class FiguraGeometrica {
+public abstract class FiguraGeometrica {
     public double calcularArea(){
         double area = 1;
         return area;

@@ -29,5 +29,11 @@ public class Cliente extends Persona{
     public void setTarjeta(Tarjeta tarjeta) {
         this.tarjeta = tarjeta;
     }
+    @Override
+    public void mostrarDatos()  {
+        System.out.println("Nombre: " + this.getNombre());
+        System.out.println("Edad: " + this.getEdad());
+        System.out.println("Direccion: " + this.getDireccion());
+    }
 }
 /*nombre, apellido y un celular del cliente así como también el método de pago.*/

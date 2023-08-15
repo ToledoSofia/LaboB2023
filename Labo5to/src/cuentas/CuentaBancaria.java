@@ -1,7 +1,7 @@
 package cuentas;
 import  personas.*;
 import pagos.*;
-public class CuentaBancaria {
+public abstract class CuentaBancaria {
     private ClienteBanco titular;
     private int cbu;
     private String alias;
@@ -11,8 +11,8 @@ public class CuentaBancaria {
     public CuentaBancaria(){
         titular = new ClienteBanco();
         saldo = 0;
-        metodoPago = new MetodoPago();
-        metodoRetiro = new MetodoPago();
+        metodoPago = new Efectivo();
+        metodoRetiro = new Efectivo();
     }
     public CuentaBancaria(ClienteBanco titular, MetodoPago metodoPago, MetodoPago metodoRetiro, int cbu){
         this.titular = titular;

@@ -3,7 +3,7 @@ package lugares;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-public class Lugar {
+public abstract class Lugar {
     private String nombre;
     private int codigo;
     private HashSet<Coordenadas> coordenadas;
@@ -46,9 +46,7 @@ public class Lugar {
         this.coordenadas = coordenadas;
     }
 
-    public int calcularPoblacion(){
-        return 1;
-    }
+    public abstract int calcularPoblacion();
 
     @Override
     public String toString() {

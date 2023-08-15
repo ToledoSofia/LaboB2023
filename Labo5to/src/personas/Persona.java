@@ -1,6 +1,6 @@
 package personas;
 
-public class Persona {
+public abstract class Persona {
     private String nombre;
     private String apellido;
     private int edad;
@@ -70,13 +70,14 @@ public class Persona {
         this.direccion = direccion;
     }
 
-    public void mostrarDatos(){
+    public abstract void mostrarDatos();
+ /*   {
         System.out.println("Nombre: " + nombre);
         System.out.println("Edad: " + edad);
         System.out.println("Direccion: " + direccion);
-    }
+    }*/
 
-    @Override
+  /*  @Override
     public String toString() {
         return "Persona{" +
                 "nombre='" + nombre + '\'' +
@@ -84,5 +85,5 @@ public class Persona {
                 ", edad=" + edad +
                 ", direccion='" + direccion + '\'' +
                 '}';
-    }
+    }*/
 }
