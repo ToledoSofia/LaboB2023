@@ -33,6 +33,9 @@ public class SistemaMascotas {
             mascotas.add(new Pajarito(nombre, duenio));
         }
     }
+    public void agregarMascotas2(Mascota m){
+        mascotas.add(m);
+    }
     public void agregarMascota(String nombre, Dueno duenio, Tipo tipo) throws ClassNotFoundException {
         Class c = Class.forName(tipo.name());
         try {
@@ -54,19 +57,40 @@ public class SistemaMascotas {
         mascotas.add(nueva);
     }
     public void comprobarPez(Pez p){
-        if(p.getVidas() == 0){
+        if(((Pez)p).getVidas() == 0){
             mascotas.remove(p);
         }
     }
     public void saludar(String nombrePersona, String nombreMascota){
+        boolean existe = false;
+        HashSet<Pez>peces = new HashSet<>();
         for(Mascota m : mascotas){
             if(m.getNombre().equals(nombreMascota)){
                 m.saludar(nombrePersona);
-            }
-            if(m instanceof Pez){
-                comprobarPez((Pez)m);
+                if(m instanceof Pez){
+                    peces.add((Pez)m);
+                }
+                existe = true;
             }
         }
+        if(!existe){
+            System.out.println("La mascota a la que quiere saludar no existe!");
+        }
+        for(Pez p : peces){
+            comprobarPez(p);
+        }
+        System.out.println();
     }
-    //borrar peces muertos
+    public void alimentar(String nombremascota){
+        boolean existe = false;
+        for(Mascota m : mascotas){
+            if(m.getNombre().equals(nombremascota)){
+                m.alimentar();
+                existe = true;
+            }
+        }
+        if(!existe){
+            System.out.println("La mascota que quiere alimentar no existe!");
+        }
+    }
 }

@@ -3,21 +3,23 @@ package mascotas;
 import personas.Dueno;
 
 public class Pez extends Mascota{
-    private static int vidas = 10;
+    private int vidas;
     public Pez() {
         super();
+        vidas = 10;
     }
 
     public Pez(String nombre, Dueno duenio) {
         super(nombre, duenio);
+        vidas = 10;
     }
 
-    public static int getVidas() {
+    public int getVidas() {
         return vidas;
     }
 
-    public static void setVidas(int vidas) {
-        Pez.vidas = vidas;
+    public void setVidas(int vidas) {
+        this.vidas = vidas;
     }
 
     @Override
@@ -26,6 +28,7 @@ public class Pez extends Mascota{
             vidas --;
         }else{
             vidas = 0;
+            System.out.println("Mataste a " + this.getNombre() + " :(");
         }
     }
     public void alimentar(){

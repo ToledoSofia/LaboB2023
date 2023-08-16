@@ -21,18 +21,23 @@ public class Gato extends Mascota{
     @Override
     public void alimentar(){
         alegria ++;
+        //System.out.println("alegria +1");
     }
 
     @Override
     public void saludar(String nombreDuenio) {
-        for(int i = 0; i<alegria; i++){
-            if(nombreDuenio.equals(getDuenio().getNombre())){
-                System.out.print("miau ");
-            }else {
-                System.out.print("MIAU! ");
+        if(alegria>0){
+            for(int i = 0; i<alegria; i++){
+                if(nombreDuenio.equals(getDuenio().getNombre())){
+                    System.out.print("miau ");
+                }else {
+                    System.out.print("MIAU! ");
+                }
             }
+            alegria --;
+        }else{
+            System.out.println(this.getNombre() +" necesita alimentarse para seguir saludando!!");
         }
-        alegria --;
     }
     @Override
     public void mostrarTipo(){
