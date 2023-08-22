@@ -34,17 +34,15 @@ public class Pajarito extends Mascota{
     }
     @Override
     public void saludar(String nombreDuenio) {
-        if(alegria>0){
-            for(int i = 0; i<alegria; i++){
-                if(nombreDuenio.equals(getDuenio().getNombre()) && !cantor){
-                    System.out.print("pio");
-                }else if (nombreDuenio.equals(getDuenio().getNombre()) && cantor){
-                    System.out.print("wawawawawawawa");
-                }
+        for(int i = 0; i<alegria; i++){
+            if(nombreDuenio.equals(getDuenio().getNombre()) && !cantor){
+                System.out.print("pio");
+            }else if (nombreDuenio.equals(getDuenio().getNombre()) && cantor){
+                System.out.print("wawawawawawawa");
             }
+        }
+        if(alegria>1){
             alegria --;
-        }else{
-            System.out.println(this.getNombre() +" necesita alimentarse para seguir saludando!!");
         }
     }
     @Override

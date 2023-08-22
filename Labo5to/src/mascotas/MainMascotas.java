@@ -24,7 +24,7 @@ public class MainMascotas {
         sistema.saludar("dueño1", "Pedro");
         sistema.saludar("dueño2", "Pedro");
         sistema.saludar("dueño1", "Bian");
-        sistema.saludar("dueño2", "Bian");
+        sistema.saludar("dueño2", "Bian");//otro dueño
 
         sistema.alimentar("Pedro");
         sistema.alimentar("Pedro");
@@ -32,8 +32,14 @@ public class MainMascotas {
         sistema.alimentar("Pedro");
         sistema.alimentar("Pedro");
         sistema.saludar("dueño1", "Pedro");
+        sistema.saludar("dueño1", "Pedro");
+        sistema.saludar("dueño1", "Pedro");
+        sistema.saludar("dueño1", "Pedro");
+        sistema.saludar("dueño1", "Pedro");
+        sistema.saludar("dueño1", "Pedro");
+        sistema.saludar("dueño1", "Pedro");
 
-        sistema.alimentar("Bian");
+        sistema.alimentar("Bian");// no existe mas
 
 
     }

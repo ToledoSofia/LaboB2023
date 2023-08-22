@@ -56,30 +56,28 @@ public class SistemaMascotas {
         mascotas.remove(modificar);
         mascotas.add(nueva);
     }
-    public void comprobarPez(Pez p){
-        if(((Pez)p).getVidas() == 0){
-            mascotas.remove(p);
-        }
-    }
     public void saludar(String nombrePersona, String nombreMascota){
         boolean existe = false;
-        HashSet<Pez>peces = new HashSet<>();
+        boolean borrar = false;
+        Pez muerto = new Pez();
         for(Mascota m : mascotas){
             if(m.getNombre().equals(nombreMascota)){
                 m.saludar(nombrePersona);
-                if(m instanceof Pez){
-                    peces.add((Pez)m);
+                if(m instanceof Pez && ((Pez) m).getVidas() == 0){
+                    muerto = (Pez) m ;
+                    borrar = true;
                 }
                 existe = true;
             }
         }
         if(!existe){
             System.out.println("La mascota a la que quiere saludar no existe!");
+        }else{
+           if(borrar){
+               mascotas.remove(muerto);
+           }
         }
-        for(Pez p : peces){
-            comprobarPez(p);
-        }
-        System.out.println();
+        //System.out.println();
     }
     public void alimentar(String nombremascota){
         boolean existe = false;

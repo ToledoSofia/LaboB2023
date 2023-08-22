@@ -4,6 +4,7 @@ import personas.Dueno;
 
 public class Perro extends Mascota{
     private static int alegria = 1;
+    private static String saludo =  "guau";
     public Perro (){
         super();
     }
@@ -19,6 +20,14 @@ public class Perro extends Mascota{
         this.alegria = alegria;
     }
 
+    public static String getSaludo() {
+        return saludo;
+    }
+
+    public static void setSaludo(String saludo) {
+        Perro.saludo = saludo;
+    }
+
     @Override
     public void alimentar(){
         alegria ++;
@@ -26,19 +35,17 @@ public class Perro extends Mascota{
     }
     @Override
     public void saludar(String nombreDuenio) {
-        if(alegria>0){
+
             for(int i = 0; i<alegria; i++){
                 if(nombreDuenio.equals(getDuenio().getNombre())){
-                    System.out.print("guau ");
+                    System.out.print(saludo + " ");
                 }else {
-                    System.out.print("GUAU! ");
+                    System.out.print(saludo.toUpperCase() + "! ");
                 }
             }
-            alegria --;
-        }else{
-            System.out.println(this.getNombre() +" necesita alimentarse para seguir saludando!!");
-        }
-
+            if(alegria>1){
+                alegria --;
+            }
     }
     @Override
     public void mostrarTipo(){
