@@ -30,7 +30,7 @@ public class PaginaComputadora {
         this.ventas = ventas;
     }
 
-    public void agregarVenta(Compra compra){
+    public void agregarVenta(Compra compra) throws Exception{
         if(compra.comprobarComponentes()){
             compra.calcularPrecio();
             ventas.add(compra);

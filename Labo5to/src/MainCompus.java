@@ -10,10 +10,11 @@ public class MainCompus {
         Teclado t2 = new Teclado();
         CPU cpu1 = new CPU();
         Pantalla p1 = new Pantalla();
-        ArrayList<Componente>componentes  = new ArrayList<Componente>();
+        ArrayList<Componente>componentes  = new ArrayList<>();
         componentes.add(cpu1);
 
         Compra compra1 = new Compra(componentes, false);
+        cpu1.setStock(0);
         compra1.agregarPeriferico(t1);
         compra1.agregarPeriferico(t2);
         compra1.agregarPeriferico(p1);
@@ -26,7 +27,12 @@ public class MainCompus {
         sistema.agregarComponente(t2);
         sistema.agregarComponente(cpu1);
         sistema.agregarComponente(p1);
-        sistema.agregarVenta(compra1);
+        try{
+            sistema.agregarVenta(compra1);
+
+        }catch (Exception e){
+            System.err.println(e);
+        }
 
     }
 }

@@ -2,6 +2,7 @@ import componentes.CPU;
 import componentes.Componente;
 import componentes.Periferico;
 import personas.Cliente;
+import exceptions.ComponenteSinStockException;
 import vehiculos.Coche;
 
 import java.util.ArrayList;
@@ -81,21 +82,27 @@ public class Compra {
             precioTotal = precioTotal;
         }
     }
-    public boolean comprobarComponentes(){
+    public boolean comprobarComponentes() throws Exception {
         boolean cpu = false, entrada = false, salida = false;
         for(Componente componente : componentes){
-            if(componente instanceof CPU){
-                cpu = true;
-            }else if(componente instanceof Periferico){
-                if(((Periferico) componente).isEntradaSalida()){
-                    entrada = true;
-                }else{
-                    salida = true;
+            if(componente.getStock()==0){
+                throw new ComponenteSinStockException("Componente sin stock");
+            } else{
+                if(componente instanceof CPU){
+                    cpu = true;
+                }else if(componente instanceof Periferico){
+                    //throw new ComponenteSinStockException("Componente sin stock");
+                    if(((Periferico) componente).isEntradaSalida()){
+                        entrada = true;
+                    }else{
+                        salida = true;
+                    }
+
                 }
             }
         }
         if(cpu == false || entrada == false || salida == false){
-            return false;
+            throw new Exception("Falta un componente escencial");
         }else{
             return true;
         }

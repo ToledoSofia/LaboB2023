@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class SensorComplejo {
     private ArrayList<DispositivoAlarma>dispositivos;
     private double valorUmbral;
+
     public SensorComplejo(){
         dispositivos = new ArrayList<DispositivoAlarma>();
         valorUmbral = 50;
@@ -46,5 +47,13 @@ public class SensorComplejo {
     }
     public void alarma(){
         System.out.println("-----ALARMA SENSOR COMPLEJO-----");
+    }
+
+    @Override
+    public String toString() {
+        return "SensorComplejo{" +
+                "dispositivos=" + dispositivos +
+                ", valorUmbral=" + valorUmbral +
+                '}';
     }
 }

@@ -3,6 +3,16 @@ package exceptions;
 public class MainExceptions{
 
     public static void main(String[] args){
+
+         String nombre = null;
+        try{
+            if(nombre == null){ throw new ExceptionCreada("creada wawawawa");
+                //System.out.println("El largo del nombre es:"+ nombre.length());
+            }
+        }catch(Exception e){
+            System.err.println(e);
+        }
+
         /*String nombre = null;
         try{
             System.out.println("El largo del nombre es:"+ nombre.length());
