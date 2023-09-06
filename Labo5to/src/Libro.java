@@ -1,3 +1,4 @@
+import bibliotecaVirtual.Genero;
 import personas.Autor;
 import personas.Persona;
 import tiempo1.Fecha;
