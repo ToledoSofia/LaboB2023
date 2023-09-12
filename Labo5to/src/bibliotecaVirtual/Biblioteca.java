@@ -52,14 +52,16 @@ public class Biblioteca {
         if(usuario.getLibrosPrestados().size() == usuario.getMembresia().getCantidadLibros()){
             throw new MembresiaException("ha alcanzado la cantidad maxima de su membresia");
         }
-        if(usuario.getLibrosPrestados().contains(libro)){
-            System.out.println("Ya tenes el libro...");
-        }
         if(!usuarios.contains(usuario)){
             agregarUsuario(usuario);
-       }
-        usuario.getLibrosPrestados().add(libro);
-        libro.setCantidadActual(libro.getCantidadActual()+1);
+        }
+        if(usuario.getLibrosPrestados().contains(libro)){
+            System.out.println("Ya tenes el libro...");
+        }else{
+            usuario.getLibrosPrestados().add(libro);
+            libro.setCantidadActual(libro.getCantidadActual()+1);
+        }
+
     }
     public void devolucion(UsuarioBiblioteca usuario, LibroVirtual libro){
         if(usuario.getLibrosPrestados().contains(libro)){

@@ -11,13 +11,14 @@ public class LibroVirtual {
     private int cantidadActual;
 
     public LibroVirtual() {
-
+        cantidadActual = cantidadDescargas;
     }
 
     public LibroVirtual(String titulo, Autor autor, Genero genero) {
         this.titulo = titulo;
         this.autor = autor;
         this.genero = genero;
+        cantidadActual = cantidadDescargas;
     }
 
     public String getTitulo() {
