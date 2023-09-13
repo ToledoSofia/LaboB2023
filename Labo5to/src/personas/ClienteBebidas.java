@@ -19,6 +19,11 @@ public class ClienteBebidas extends Persona {
         super(nombre);
     }
 
+    public ClienteBebidas(String nombre, int dni) {
+        super(nombre, dni);
+        bebidasConsumidas = new HashMap<>();
+    }
+
     public ClienteBebidas(String nombre, HashMap<Bebida, Integer> bebidasConsumidas) {
         super(nombre);
         this.bebidasConsumidas = bebidasConsumidas;
@@ -34,19 +39,16 @@ public class ClienteBebidas extends Persona {
     public int calcularCoeficienteHidratacion(){
         int hidratacion =  0;
         for(Bebida b : bebidasConsumidas.keySet()){
-            if(b instanceof Neutra){
-                hidratacion += bebidasConsumidas.get(b)*(((Neutra) b).getPositividad() - ((Neutra) b).getNegatividad());
-            }else if (b instanceof Azucarada){
-                hidratacion += bebidasConsumidas.get(b)*(1-(((Azucarada) b).getNegatividad()*((Azucarada) b).getCantidadAzucar()));
-            } else if (b instanceof Alcoholica) {
-                hidratacion += bebidasConsumidas.get(b)* (0-(((Alcoholica) b).getNegatividad()*((Alcoholica) b).getCantidadAlcohol()));
-
-            }
+                hidratacion += bebidasConsumidas.get(b)* (b.getPositividad()- b.getNegatividad());
         }
         return hidratacion;
     }
     public void consumirBebida(Bebida b, int cantidad){
-        bebidasConsumidas.put(b,cantidad);
+        if(bebidasConsumidas.containsKey(b)){
+            bebidasConsumidas.put(b, bebidasConsumidas.get(b) + cantidad);
+        }else{
+            bebidasConsumidas.put(b,cantidad);
+        }
     }
 
     @Override
