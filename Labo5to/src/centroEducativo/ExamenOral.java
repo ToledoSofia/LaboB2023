@@ -1,6 +1,6 @@
 package centroEducativo;
 
-public class ExamenOral extends Examen implements AprobarExamen {
+public class ExamenOral extends Examen  {
     private Satisfaccion satisfaccion;
 
     public ExamenOral(Satisfaccion satisfaccion) {
