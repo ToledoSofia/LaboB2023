@@ -33,7 +33,7 @@ public class Trabajador extends Persona implements Mensajero{
     }
 
     @Override
-    public void enviarMensajeApoyo(String mensaje) {
+    public void enviarMensajeApoyo(String mensaje) {//hashmap DayOfWeek, horario
         if(LocalDateTime.now().getHour() >= horario.get(0) && LocalDateTime.now().getHour() <= horario.get(1)){
             System.out.println("Yo, " +getNombre()+ ", te invito a que " + mensaje);
         }else{

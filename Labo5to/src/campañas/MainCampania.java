@@ -11,7 +11,7 @@ public class MainCampania {
         Trabajador trabajador1 = new Trabajador("juan", 7, 17);
         Trabajador trabajador2 = new Trabajador("pepe", 18, 23);
 
-        PartidoPolitico partido = new PartidoPolitico("partido1");
+        PartidoPolitico partido = new PartidoPolitico("PARTIDO1");
 
         partido.agregarMensajero(paloma1);
         partido.agregarMensajero(paloma2);
