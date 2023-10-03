@@ -60,7 +60,7 @@ public class PartidoPolitico {
     }
     public void hacerCampania(){
         for(Mensajero m :enviadores){
-            m.enviarMensajeApoyo("Vote por el partido para un mejor futuro");
+            m.enviarMensajeApoyo("Vote por " + nombre + " para un mejor futuro");
         }
     }
 }

@@ -8,7 +8,7 @@ public class MainCampania {
         TelefonoMovil telefono1 = new TelefonoMovil(true, true);
         TelefonoMovil telefono2 = new TelefonoMovil(true, false);
 
-        Trabajador trabajador1 = new Trabajador("juan", 9, 17);
+        Trabajador trabajador1 = new Trabajador("juan", 7, 17);
         Trabajador trabajador2 = new Trabajador("pepe", 18, 23);
 
         PartidoPolitico partido = new PartidoPolitico("partido1");
