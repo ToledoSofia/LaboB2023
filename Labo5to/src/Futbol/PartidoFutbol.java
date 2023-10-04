@@ -115,9 +115,9 @@ public class PartidoFutbol {
                 golesLocal.put(jugador, 1);
             }
             if(asistenciasLocal.containsKey(asistencia)){
-                asistenciasLocal.put(jugador,asistenciasLocal.get(jugador) + 1);
+                asistenciasLocal.put(asistencia,asistenciasLocal.get(asistencia) + 1);
             }else{
-                asistenciasLocal.put(jugador, 1);
+                asistenciasLocal.put(asistencia, 1);
             }
             if(intentosLocal.containsKey(jugador)){
                 intentosLocal.put(jugador, intentosLocal.get(jugador) + 1);

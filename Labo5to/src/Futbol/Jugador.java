@@ -23,11 +23,23 @@ public abstract class Jugador implements Contrato {
         this.nombre = nombre;
         historial = new HashSet<>();
         fechaNacimiento = LocalDate.now();
+        partidos = new HashSet<>();
+        actual = null;
     }
 
     public Jugador(String nombre, EquipoFutbol actual) {
         this.nombre = nombre;
         this.actual = actual;
+        historial = new HashSet<>();
+        partidos = new HashSet<>();
+    }
+
+    public Jugador(String nombre, LocalDate fechaNacimiento, EquipoFutbol actual) {
+        this.nombre = nombre;
+        this.fechaNacimiento = fechaNacimiento;
+        this.actual = actual;
+        historial = new HashSet<>();
+        partidos = new HashSet<>();
     }
 
     public String getNombre() {
@@ -99,9 +111,14 @@ public abstract class Jugador implements Contrato {
         if(!getActual().equals(e)){
             throw new NoFormaParteDelClubException("El jugador no forma parte de este club");
         }
-        if(getFechaNacimiento().getYear() - LocalDate.now().getYear() >= 35){ // no esta del todo_bien pero bueno
+        if(LocalDate.now().getYear() - getFechaNacimiento().getYear() >= 35){ // no esta del todo_bien pero bueno
+            actual = null;
+            e.eliminarJugador(this);
             throw new MayorA35Exception("El jugador es mayor a 35 años");
         }
         System.out.println("El " + getNombre() + " se renovo en " + e.getNombre());
+    }
+    public void agregarPartido(PartidoFutbol partido){
+        partidos.add(partido);
     }
 }

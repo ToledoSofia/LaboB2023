@@ -12,11 +12,15 @@ public class SistemaPartidos {
     public SistemaPartidos(HashSet<PartidoFutbol> partidos) {
         this.partidos = partidos;
     }
-    //actualizar todos los jugadores cada vez que se agrega un partido
+    public void agregarpartido(PartidoFutbol partido){
+        partidos.add(partido);
+        partido.getLocal().agregarPartidoJugadores(partido);
+        partido.getVisitante().agregarPartidoJugadores(partido);
 
-
+        partido.getLocal().actualizarDatosJugadores();
+        partido.getVisitante().actualizarDatosJugadores();
+    }
 }
-
     /*public void actualizarDatos(PartidoFutbol partido){
         double porcentaje = 0;
         //local
