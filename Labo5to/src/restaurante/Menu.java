@@ -12,6 +12,12 @@ public class Menu implements Restaurante{
         chefs = new HashSet<>();
     }
 
+    public Menu(String nombre) {
+        this.nombre = nombre;
+        platos = new HashSet<>();
+        chefs = new HashSet<>();
+    }
+
     public Menu(HashSet<Plato1> platos, HashSet<Chef> chefs) {
         this.platos = platos;
         this.chefs = chefs;
@@ -60,7 +66,7 @@ public class Menu implements Restaurante{
             throw new PlatoNoPuedeSerIncorporadoException("El chef a cargo del plato no es parte del restaurante");
         }
         platos.add(plato);
-        System.out.println("El plato " + plato.getNombre() + "se agrego al menu del restaurante " + nombre);
+        System.out.println("El plato " + plato + " se agrego al menu del restaurante " + nombre);
     }
 
     @Override
@@ -85,7 +91,7 @@ public class Menu implements Restaurante{
         Plato1 p2 = new Plato1("plato2", c4);//chef no existe
 
 
-        Menu restaurante = new Menu();
+        Menu restaurante = new Menu("Hamburgalia");
         try {
             restaurante.Contratar(c1);//si
             //restaurante.Contratar(c2);//no

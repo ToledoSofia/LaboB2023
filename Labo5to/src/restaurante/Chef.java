@@ -26,4 +26,11 @@ public class Chef extends Persona {
     public void mostrarDatos() {
 
     }
+
+    @Override
+    public String toString() {
+        return "Chef{" +
+                "exp=" + exp +
+                '}';
+    }
 }

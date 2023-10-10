@@ -56,4 +56,13 @@ public class Plato1 {
         this.chefACargo = chefACargo;
     }
 
+    @Override
+    public String toString() {
+        return "Plato1{" +
+                "nombre='" + nombre + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                ", precio=" + precio +
+                ", tipo=" + tipo +
+                '}';
+    }
 }
